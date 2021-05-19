@@ -12,9 +12,6 @@
 <<<<<<< HEAD
 <p>たすたす</p>
 <p>てすと</p>
-=======
-	<p>たすたす</p>
-	<p>とすとす</p>
->>>>>>> refs/remotes/origin/master
+<p>作業を追加</p>
 </body>
 </html>
