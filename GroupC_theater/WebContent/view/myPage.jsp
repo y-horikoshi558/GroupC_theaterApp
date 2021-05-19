@@ -4,50 +4,62 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>マイページ</title>
+	<link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
 </head>
 <body>
 	<header>
-		<h2>headerWrapper</h2>
+		<h2 class="PageWrapper">headerWrapper</h2>
 	</header>
-	<main>
-		<div class="myPage-wrapper">
+	<div class="main">
+		<div class="myPageWrapper">
 			<h1>マイページ</h1>
 		</div>
 
 		<div class="myPageContents">
-			<div class="contents">
+		<div class="contents">
+			<div class="content">
 				<p>ユーザーID</p>
 				<form action="" method="get">
 
 				</form>
 			</div>
-			<div class="contents">
+			<div class="content">
 				<p>メールアドレス</p>
 			</div>
-			<div class="contents">
+			<div class="content">
 				<p>パスワード</p>
 			</div>
+		</div>
+
 
 			<div class="milageContents">
-				<div class="runk">
+				<div class="milageDateBox">
+					<div class="runk">
 					<p>Rank</p>
 				</div>
 				<div class="milagePoint">
 					<p>マイレージポイント</p>
 				</div>
-			</div>
-
-			<div class="bottomContents">
-				<div Class="renderbuttons">
-					<input class="btn renderTop" type="submit" value="TOPへ">
-					<input class="btn renderSet" type="submit" value="変更">
-					<input class="btn renderUnsub" type="submit" value="退会">
 				</div>
 			</div>
 
+			<div class="bottomContents">
+
+					<div class="bottomLeft">
+						<input class="btn renderTop" type="submit" value="TOPへ">
+					</div>
+
+					<div class="bottomRight">
+						<input class="btn renderSet" type="submit" value="変更">
+						<input class="btn renderUnsub" type="submit" value="退会">
+					</div>
+
+
+			</div>
+
 		</div>
-	</main>
+	</div>
 	<footer>
 
 	</footer>
