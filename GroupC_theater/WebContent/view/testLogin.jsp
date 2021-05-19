@@ -8,7 +8,7 @@
 </head>
 <body>
 	<p>ログインのテストページです</p>
-	<form action="../../src/mypageIndex.java" method="get">
+	<form action="../myPage" method="get">
 		<input type="submit" value= "ログイン">
 	</form>
 

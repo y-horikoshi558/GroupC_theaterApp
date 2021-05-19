@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>マイページ</title>
 	<link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+
+	<%
+		int testId = 101;
+	%>
+
 </head>
 <body>
 	<header>
@@ -14,6 +19,10 @@
 	<div class="main">
 		<div class="myPageWrapper">
 			<h1>マイページ</h1>
+		</div>
+
+		<div class="checkId">
+			<p> テスト</p>
 		</div>
 
 		<div class="myPageContents">
