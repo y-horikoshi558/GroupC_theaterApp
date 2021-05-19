@@ -19,7 +19,9 @@ public class DBClass {
 		try {
 		    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-		    String serverName = "POCHI\\SQLEXPRESS";	// サーバ名
+		    // フェッチ後はそれぞれの名前に変更
+		    // コミット前に空にしておくこと
+		    String serverName = "";	// サーバ名
 		    String dbName = "Kensyu";						// データベース名
 
 		    String userName = "sa";							// ユーザ名
