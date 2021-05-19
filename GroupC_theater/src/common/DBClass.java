@@ -22,7 +22,7 @@ public class DBClass {
 		    // フェッチ後はそれぞれの名前に変更
 		    // コミット前に空にしておくこと
 		    String serverName = "";	// サーバ名
-		    String dbName = "Kensyu";						// データベース名
+		    String dbName = "GroupC";						// データベース名
 
 		    String userName = "sa";							// ユーザ名
 		    String password = "Step2154822";				// パスワード
