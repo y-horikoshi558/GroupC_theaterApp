@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="checkId">
-			<p> テスト</p>
+			<p> テスト:</p>
 		</div>
 
 		<div class="myPageContents">
