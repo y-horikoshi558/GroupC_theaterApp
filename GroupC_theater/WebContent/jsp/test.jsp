@@ -9,7 +9,12 @@
 <body>
 
 	<p>てすてす</p>
+<<<<<<< HEAD
 <p>たすたす</p>
 <p>てすと</p>
+=======
+	<p>たすたす</p>
+	<p>とすとす</p>
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>
