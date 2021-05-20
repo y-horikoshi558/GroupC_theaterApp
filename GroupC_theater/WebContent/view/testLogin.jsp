@@ -7,9 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
+
 	<p>ログインのテストページです</p>
 	<form action="../myPage" method="get">
-		<input type="submit" value= "ログイン">
+		<input type="text" name="testId">
+		<input type="submit" value="ログイン">
 	</form>
 
 
