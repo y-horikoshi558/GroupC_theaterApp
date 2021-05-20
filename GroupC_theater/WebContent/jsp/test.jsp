@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<img src="../image/tantei_boy.png" alt="迷探偵の画像" title="迷探偵">
+
 
 </body>
 </html>

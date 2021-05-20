@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+
+
+
+
+.main{
+	background-color: #434343ff;
+}
+
+.myPageWrapper{
+	text-align: center;
+	padding:40px 0px;
+}
+
+.myPageWrapper h1{
+	color:#ffffff;
+}
+
+.contents{
+
+	padding:0 100px;
+}
+
+.content p{
+	font-size:24px;
+	padding: 10px 50px;
+	color:#ffffff;
+
+}
+
+.milageDateBox{
+	background-color: #d9ead3ff;
+	margin:50px 100px;
+	padding:20px;
+	border-radius: 10px;
+}
+
+
+.milageDateBox p{
+	font-size:24px;
+	padding:10px 50px;
+}
+
+.bottomContents{
+	padding: 0px 40px 10px 40px;
+}
+
+.bottomLeft{
+	display:inline;
+}
+
+
+.bottomRight{
+	float: right;
+}
+
+.btn {
+	padding:10px 30px;
+}
+
+.renderTop{
+	background-color: #cfe2f3ff;
+}
+
+.renderSet{
+	padding:10px 80px;
+	background-color: #fff2ccff;
+	margin-right: 40px;
+}
+
+.renderUnsub{
+	background-color: #ea9999ff;
+
+}
