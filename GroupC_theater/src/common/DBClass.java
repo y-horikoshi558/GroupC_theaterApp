@@ -21,7 +21,7 @@ public class DBClass {
 
 		    // フェッチ後はそれぞれの名前に変更
 		    // コミット前に空にしておくこと
-		    String serverName = "";	// サーバ名
+		    String serverName = "POCHI\\SQLEXPRESS";	// サーバ名
 		    String dbName = "GroupC";						// データベース名
 
 		    String userName = "sa";							// ユーザ名
@@ -91,14 +91,14 @@ public class DBClass {
 
 
 	/**
-	 * 社員情報検索処理（あいまい検索）
+	 * 映画の詳細情報の取得
 	 *
-	 * @param name
-	 *            社員名（漢字　or フリガナ）
+	 * @param id
+	 *           	映画のタイトルID
 	 *
-	 * @return 社員一覧リスト
+	 * @return 詳細情報リスト
 	 */
-	public ArrayList<String[]> getSyainData(String name){
+	public ArrayList<String[]> getSyainData(String id){
 
 		ArrayList<String[]> data = new ArrayList<String[]>();
 
@@ -110,10 +110,9 @@ public class DBClass {
 			stmt = objCon.createStatement();
 
 	        String sql = "";
-	        sql += " SELECT 社員ID, 氏名, フリガナ, 部門ID, CONVERT(VARCHAR,生年月日,111) AS 生年月日, 都道府県 , 性別 ";
-	        sql += " FROM   社員マスタ ";
-	        sql += " WHERE  氏名 LIKE '%"+ name + "%'";
-	        sql += " OR     フリガナ LIKE '%"+ name + "%'";
+	        sql += " SELECT * ";
+	        sql += " FROM   映画詳細 ";
+	        sql += " title_id = '" + id + "'";
 
 	        // 実行SQL確認
 	        System.out.println(sql);
@@ -126,13 +125,13 @@ public class DBClass {
 	        	// 取得するフィールド分の配列生成
 	        	String[] strData = new String[7];
 
-	        	strData[0] =rset.getString("社員ID");
-	        	strData[1] =rset.getString("氏名");
-	        	strData[2] =rset.getString("フリガナ");
-	        	strData[3] =rset.getString("部門ID");
-	        	strData[4] =rset.getString("生年月日");
-	        	strData[5] =rset.getString("都道府県");
-	        	strData[6] =rset.getString("性別");
+	        	strData[0] =rset.getString("poster");
+	        	strData[1] =rset.getString("story");
+	        	strData[2] =rset.getString("image_01");
+	        	strData[3] =rset.getString("image_02");
+	        	strData[4] =rset.getString("image_03");
+	        	strData[5] =rset.getString("image_04");
+	        	strData[6] =rset.getString("image_05");
 
 	        	// リストに追加
 	        	data.add(strData);
