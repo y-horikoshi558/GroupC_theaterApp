@@ -12,8 +12,14 @@
 
 
 	<p>ログインのテストページです</p>
-	<form action="../myPage" method="get">
+	<%--<form action="../myPage" method="get"> 変更前  --%>
+
+
+	<form action="../testLoginPage" method="post">
+		<p>ユーザーID</p>
 		<input type="text" name="testId">
+		<p>パスワード</p>
+		<input type="text" name="testPass">
 		<input type="submit" value="ログイン">
 	</form>
 

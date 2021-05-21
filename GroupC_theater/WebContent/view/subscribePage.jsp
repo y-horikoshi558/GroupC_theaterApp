@@ -34,6 +34,8 @@
 				<input type="text" name="newUserEmail">
 				<p>パスワード</p>
 				<input type="text" name="newUserPass">
+				<p>再確認パスワード</p>
+				<input type="text" name="newUserPass">
 
 			</form>
 
