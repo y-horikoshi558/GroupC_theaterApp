@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="common.NullCheck"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,13 +52,14 @@ $(function() {
 
 <body>
 <%
-//String title = request.getParameter("title");
-String title = "名探偵オグリ　勝利の鼓動";
+String title = request.getParameter("title");
 String date = "5" + "月" + "31" + "日";
 String theater = "シアター" + "A";
 String time = "17:40";
 
+if (NullCheck.nullCheckBoolean(title) == "")
 %>
+<META http-equiv="Refresh" content="0;URL=test.jsp">
 
 	<div align="center">
 		<h1><%= title %></h1>
@@ -104,6 +106,7 @@ String time = "17:40";
 			%>
 
 			</table>
+			<br><br>
 
 			<input type="hidden" name="title" value=<%= title %>>
 			<input type="hidden" name="date" value=<%= date %>>

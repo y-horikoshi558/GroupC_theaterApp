@@ -1,42 +1,38 @@
 package common;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class groupDAO extends DBClass{
 
 	public void getUserData(String id) {
 
-		//PreparedStatementを生成
-	    PreparedStatement pstmt;
+		//Statementを生成
+	    Statement stmt;
 
 	    try {
+
+	    	stmt = objCon.createStatement();
 
 	    	//データベースに接続
 	    	dbOpen();
 
-	     //ユーザーデータを持ってくるSQLクエリを設定
-	     /*************************************************/
-
+	    	//ユーザーデータを持ってくるSQLクエリを設定
+	    	/*************************************************/
 
 	        String sql = "";
-	        sql += " SELECT user_id, user_name, user_kana, email, user_pass, total_prace, mileage, rank ";
-	        sql += " FROM  顧客マスタ ";
-	        sql += " WHERE user_id = ?"; //					後で変更:レコード一つを持ってくる
+	        sql += " SELECT * ";
+	        sql += " FROM  料金表マスタ ";
 
 	        System.out.println(sql);
 
+	        /*************************************************/
 
-	        //SQLからのレスポンス結果を pstmt に格納
-	        pstmt = objCon.prepareStatement(sql);
+	        // 実行SQL確認
+	        System.out.println(sql);
 
-	        pstmt.setString(1, id);
-
-	     /*************************************************/
-
-
-	        //レスポンス結果をrsultset rsetに格納
-	        ResultSet rset = pstmt.executeQuery();
+	        // 問い合わせの実行
+	        ResultSet rset = stmt.executeQuery(sql);
 
 	        while(rset.next()) {
 
