@@ -123,7 +123,7 @@ public class DAOs extends DBClass{
 	}
 
 
-	public void updateUser(String email,String id,String pass) {
+	public void updateUser(String email,String new_pass,String id, String origin_pass) {
 
 		//PreparedStatementを生成
 	    PreparedStatement pstmt;
@@ -144,8 +144,10 @@ public class DAOs extends DBClass{
 	        sql += " 顧客マスタ";
 	        sql	+="  SET";
 	        sql	+="  email = ?";
+	        sql	+="  ,user_pass = ?";
 	        sql	+="  WHERE user_id = ?";
 	        sql	+="  AND   user_pass = ?";
+
 
 
 	        System.out.println(sql);
@@ -156,8 +158,9 @@ public class DAOs extends DBClass{
 
 
 	        pstmt.setString(1, email);
-	        pstmt.setString(2, id);
-	        pstmt.setString(3, pass);
+	        pstmt.setString(2, new_pass);
+	        pstmt.setString(3, id);
+	        pstmt.setString(4, origin_pass);
 
 
 	        pstmt.executeUpdate();

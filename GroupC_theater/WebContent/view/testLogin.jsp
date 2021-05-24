@@ -6,7 +6,9 @@
 <meta charset="UTF-8">
 
 <!-- jQuery	の呼び出し -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../js/JQuery.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +31,6 @@
 
 
 
-<script src ="js/JQuery.js"></script>
 
 </body>
 </html>
