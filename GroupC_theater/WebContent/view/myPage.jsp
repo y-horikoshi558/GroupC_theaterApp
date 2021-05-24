@@ -88,12 +88,20 @@
 			<div class="bottomContents">
 
 					<div class="bottomLeft">
-						<input class="btn renderTop" type="submit" value="TOPへ">
+						<form action="testLogin.jsp">
+							<input class="btn renderTop" type="submit" value="TOPへ">
+						</form>
 					</div>
 
 					<div class="bottomRight">
-						<input class="btn renderSet" type="submit" value="変更">
-						<input class="btn renderUnsub" type="submit" value="退会">
+
+						<form action="./userInfoReset.jsp" method ="get">
+							<input class="btn renderSet" type="submit" value="変更" >
+						</form>
+
+						<form action="../UnSubPage" method="post">
+							<input class="btn renderUnsub" type="submit" value="退会" >
+						</form>
 					</div>
 
 

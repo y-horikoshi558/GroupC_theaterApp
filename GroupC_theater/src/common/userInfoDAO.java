@@ -65,7 +65,7 @@ public class userInfoDAO extends DBClass{
 
 	        rset.close();	// ResultSetのクローズ
 	        pstmt.close();	// PreparedStatementのクローズ
-	        dbOpen();		//
+	        dbClose();		//
 
 		} catch (Exception e) {
 			System.err.println(e.getClass().getName() + ":" + e.getMessage());

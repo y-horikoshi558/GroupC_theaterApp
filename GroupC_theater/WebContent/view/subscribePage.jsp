@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<%
+
+%>
+
 <header>
 
 </header>
@@ -26,16 +30,28 @@
 
 
 
-			<form action="" method="post">
+			<form action="../UserSubscribe" method="post">
+
+				<p>ユーザー名</p>
+				<input type="text" name="uName" >
+
+				<p>フリガナ</p>
+				<input type="text" name="uKanaName" >
+
+				<p>メールアドレス</p>
+				<input type="text" name="uEmail">
 
 				<p>ユーザーID</p>
-				<input type="text" name="newUserId">
-				<p>メールアドレス</p>
-				<input type="text" name="newUserEmail">
+				<input type="text" name="uId">
+
 				<p>パスワード</p>
-				<input type="text" name="newUserPass">
-				<p>再確認パスワード</p>
-				<input type="text" name="newUserPass">
+				<input type="text" name="uPass">
+
+				<p>パスワード再確認</p>
+				<input type="text" name="uPassCheck">
+
+				<input type="submit" value ="登録">
+
 
 			</form>
 
