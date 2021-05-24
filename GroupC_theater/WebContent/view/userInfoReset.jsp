@@ -59,24 +59,32 @@
 
 				<div class="reset-email">
 					<p>メールアドレス</p>
-					<input type="text" name="setEmail" form="sback" value="<%=user_email%>">
+
 				</div>
 				<div class="reset-pass">
 					<p>パスワード</p>
-					<input type="text" name="setPass" form="scheck" value="<%=user_pass%>">
+
 				</div>
 
 			<div class="bottom-container">
 				<div class="buttom-contents">
 					<div  class="form-back">
-						<form action="myPage.jsp" method="get" id="sback">
-							<input type="submit"form="sback" value="戻る">
+
+						<form action="myPage.jsp" method="get" id ="sback">
+							<input type="submit" value="戻る" form="sback">
 						</form>
 					</div>
 					<div  class="form-check">
-						<form action="testTopPage.jsp" method="post" id="scheck">
-							<input type="submit" form="scheck" value="確認">
+
+						<form action="../UserInfoReset" method="post" id="inputreset">
+
+						<input type="text" name="setEmail"  value="<%=user_email%>">
+
+						<input type="submit" value="確認">
+
 						</form>
+
+						<input type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
 					</div>
 
 				</div>

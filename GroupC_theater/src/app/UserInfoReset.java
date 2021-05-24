@@ -66,7 +66,7 @@ public class UserInfoReset extends HttpServlet {
 
 		DAOs db = new DAOs();
 
-		db.updateUser(req_email,req_pass,user_id,user_pass);
+		db.updateUser(req_email, req_pass, user_id, user_pass);
 
 		response.sendRedirect("view/testTopPage.jsp");
 
