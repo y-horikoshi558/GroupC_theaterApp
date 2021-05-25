@@ -174,7 +174,6 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 	<% } %>
 	</table>
 
-
 	<input type="hidden" name="title" value=<%= title %>>
 	<input type="hidden" name="id" value=<%= id %>>
 	<input type="hidden" name="date">

@@ -1,7 +1,7 @@
 package common;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +12,14 @@ public class groupDAO extends DBClass{
 		List<GroupBean> data = new ArrayList<GroupBean>();
 
 		//Statementを生成
-		Statement stmt;
+		//Statement stmt;
+
+		// PreparedStatement生成
+		PreparedStatement pstmt;
+
 		try {
 
-			stmt = objCon.createStatement();
+			//stmt = objCon.createStatement();
 
 			//データベースに接続
 			dbOpen();
@@ -30,10 +34,16 @@ public class groupDAO extends DBClass{
 			// 実行SQL確認
 			System.out.println(sql);
 
+			//SQLからのレスポンス結果を pstmt に格納
+			pstmt = objCon.prepareStatement(sql);
+
 			/*************************************************/
 
-			// 問い合わせの実行
-			ResultSet rset = stmt.executeQuery(sql);
+			//SQLからのレスポンス結果を pstmt に格納
+			pstmt = objCon.prepareStatement(sql);
+
+			//レスポンス結果をrsultset rsetに格納
+			ResultSet rset = pstmt.executeQuery();
 
 			while(rset.next()) {
 
