@@ -49,6 +49,8 @@ public class LoginServlet extends HttpServlet {
 		List<userBean> userList =dao.getUserData(id, pass);
 
 		HttpSession session = request.getSession();
+
+		//ここの処理不安定
 		boolean login = false;
 		if(userList.size() != 0) {
 			login = true;

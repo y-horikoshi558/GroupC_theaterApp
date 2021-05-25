@@ -11,6 +11,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+
+function next(){
+	document.frm.action = "../UserInfoReset";
+	document.frm.submit();
+}
+</script>
 </head>
 <body>
 
@@ -66,23 +73,22 @@
 
 				</div>
 
+			<form action="myPage.jsp" method="post" id ="sback" name="frm">
+
 			<div class="bottom-container">
 				<div class="buttom-contents">
 					<div  class="form-back">
 
-						<form action="myPage.jsp" method="get" id ="sback">
 							<input type="submit" value="戻る" form="sback">
-						</form>
+
 					</div>
 					<div  class="form-check">
 
-						<form action="../UserInfoReset" method="post" id="inputreset">
 
 						<input type="text" name="setEmail"  value="<%=user_email%>">
 
-						<input type="submit" value="確認">
+						<input type="button" value="確認" onClick="next()">
 
-						</form>
 
 						<input type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
 					</div>
@@ -91,6 +97,7 @@
 
 			</div>
 
+			</form>
 			</div>
 
 

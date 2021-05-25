@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <title>マイページ</title>
 	<link rel="stylesheet" type="text/css" href="../public/stylesheet.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -108,7 +109,11 @@
 			</div>
 
 		</div>
+
+
+
 	</div>
+
 	<footer>
 
 	</footer>
