@@ -1,3 +1,6 @@
+<%@page import="common.NullCheck"%>
+<%@page import="common.GroupBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -60,34 +63,49 @@ $(function() {
 
 <body>
 <%
-String title = request.getParameter("title");
-String date = request.getParameter("date");
-String theater = request.getParameter("theater");
-String time = request.getParameter("time");
+String title 	= (String)request.getAttribute("title");
+String date 	= (String)request.getAttribute("date");
+String month = "";
+String day = "";
+String screen 	= (String)request.getAttribute("screen");
+String time 	= (String)request.getAttribute("time");
 
 String[] seats = new String[6];
-seats = request.getParameterValues("seat");
+seats = (String[])request.getAttribute("seats");
 
+List<GroupBean> groupList = (List<GroupBean>)request.getAttribute("list");
+
+if (NullCheck.nullCheckBoolean(title) == "" ||
+NullCheck.nullCheckBoolean(date) == "" ||
+NullCheck.nullCheckBoolean(seats[0]) == "")
+{ %>
+<META http-equiv="Refresh" content="0;URL=selectDate.jsp">
+<% }
+else
+{
+	month = "" + Integer.parseInt(date.substring(5, 7));
+	day = "" + Integer.parseInt(date.substring(8, 10));
+}
 %>
 
 	<div align="center">
-		<h1><%= request.getParameter("title") %></h1>
+		<h1><%= request.getAttribute("title") %></h1>
 
-		<h2><%= date %>　<%= theater %>　<%= time %></h2>
+		<h2><%= month %>月<%= day %>日　<%= screen %>　<%= time %></h2>
 
 		<p>チケットの種類をお選びください。</p>
 
-		<% for (int i = 0; "" != seats[i]; i++) { %>
+		<% for (int i = 0; i < seats.length; i++) { %>
+			<% if (seats[i] == "")	continue; %>
 
 		<p>
 		<%= seats[i] %>
 
 		<select class="selectGroup" name="select" id="select<%= i %>">
 			<option value="0" selected>選択してください。</option>
-			<option value="1000">幼児</option>
-			<option value="1500">小学生</option>
-			<option value="1900">大人</option>
-			<option value="1600">etc...</option>
+			<% for (int j = 0; j < groupList.size(); j++) { %>
+			<option value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
+			<% } %>
 		</select>
 
 		</p>
@@ -102,10 +120,9 @@ seats = request.getParameterValues("seat");
 		<form action="" id="form" method="GET">
 			<input type="hidden" name="title" value=<%= title %>>
 			<input type="hidden" name="date" value=<%= date %>>
-			<input type="hidden" name="theater" value=<%= theater %>>
+			<input type="hidden" name="theater" value=<%= screen %>>
 			<input type="hidden" name="time" value=<%= time %>>
 			<% for (int i = 0; i < seats.length; i++) { %>
-			<%= seats[i] %>
 				<input type="hidden" name="seat"value=<%= seats[i] %>>
 				<input type="hidden" name="group">
 				<input type="hidden" name="price">

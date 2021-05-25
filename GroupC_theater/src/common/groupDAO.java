@@ -2,65 +2,59 @@ package common;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class groupDAO extends DBClass{
 
-	public void getUserData(String id) {
+	public List<GroupBean> getUserData(String id) {
+
+		List<GroupBean> data = new ArrayList<GroupBean>();
 
 		//Statementを生成
-	    Statement stmt;
+		Statement stmt;
+		try {
 
-	    try {
+			stmt = objCon.createStatement();
 
-	    	stmt = objCon.createStatement();
+			//データベースに接続
+			dbOpen();
 
-	    	//データベースに接続
-	    	dbOpen();
+			//ユーザーデータを持ってくるSQLクエリを設定
+			/*************************************************/
 
-	    	//ユーザーデータを持ってくるSQLクエリを設定
-	    	/*************************************************/
+			String sql = "";
+			sql += " SELECT * ";
+			sql += " FROM  料金表マスタ ";
 
-	        String sql = "";
-	        sql += " SELECT * ";
-	        sql += " FROM  料金表マスタ ";
+			// 実行SQL確認
+			System.out.println(sql);
 
-	        System.out.println(sql);
+			/*************************************************/
 
-	        /*************************************************/
+			// 問い合わせの実行
+			ResultSet rset = stmt.executeQuery(sql);
 
-	        // 実行SQL確認
-	        System.out.println(sql);
+			while(rset.next()) {
 
-	        // 問い合わせの実行
-	        ResultSet rset = stmt.executeQuery(sql);
+				GroupBean ib = new GroupBean();
 
-	        while(rset.next()) {
+				ib.setId(rset.getString("group_id"));
+				ib.setAge(rset.getString("age"));
+				ib.setPrice(rset.getString("prace"));
 
-      	// beanの利用
-	        	userBean ib = new userBean();
-
-	        	ib.setUserId(rset.getString("user_id"));
-	        	ib.setUserName(rset.getString("user_name"));
-	        	ib.setUserKana(rset.getString("user_kana"));
-	        	ib.setuEmail(rset.getString("email"));
-	        	ib.setuPass(rset.getString("user_pass"));
-	        	ib.setTotal_price(rset.getString("total_prace"));
-	        	ib.setRank(rset.getString("rank"));
-	        	ib.setMileage(rset.getInt("mileage"));
-
-
-	        }
-
+				// リストに追加
+	        	data.add(ib);
+			}
 
 	        rset.close();	// ResultSetのクローズ
-	        pstmt.close();	// PreparedStatementのクローズ
 	        dbClose();		//
 
 		} catch (Exception e) {
 			System.err.println(e.getClass().getName() + ":" + e.getMessage());
 		}
 
-
+		return data;
 	}
 
 }

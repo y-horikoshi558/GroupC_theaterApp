@@ -53,19 +53,28 @@ $(function() {
 <body>
 <%
 String title = request.getParameter("title");
-String date = "5" + "月" + "31" + "日";
-String theater = "シアター" + "A";
-String time = "17:40";
+String id = request.getParameter("id");
+String date = request.getParameter("date");
+String month = "";
+String day = "";
+String screen = "スクリーン" + request.getParameter("screen");
+String time = request.getParameter("time");
 
-if (NullCheck.nullCheckBoolean(title) == "")
+if (NullCheck.nullCheckBoolean(title) == "" ||
+NullCheck.nullCheckBoolean(date) == "")
+{ %>
+<META http-equiv="Refresh" content="0;URL=selectDate.jsp">
+<% }
+else
+{
+	month = "" + Integer.parseInt(date.substring(5, 7));
+	day = "" + Integer.parseInt(date.substring(8, 10));
+}
 %>
-<META http-equiv="Refresh" content="0;URL=test.jsp">
-
 	<div align="center">
 		<h1><%= title %></h1>
-		<h2><%= date %>　<%= theater %>　<%= time %></h2>
-
-		<form action="selectAge.jsp" method="GET">
+		<h2><%= month %>月<%= day %>日　<%= screen %>　<%= time %></h2>
+		<form action="../selectGroup" method="GET">
 			<table border="1" style="width: 800px; height: 100px;" id="sheetTable">
 				<tr>
 					<th class="tableHeader">席／列</th>
@@ -109,8 +118,9 @@ if (NullCheck.nullCheckBoolean(title) == "")
 			<br><br>
 
 			<input type="hidden" name="title" value=<%= title %>>
+			<input type="hidden" name="id" value=<%= id %>>
 			<input type="hidden" name="date" value=<%= date %>>
-			<input type="hidden" name="theater" value=<%= theater %>>
+			<input type="hidden" name="screen" value=<%= screen %>>
 			<input type="hidden" name="time" value=<%= time %>>
 			<input type="submit" value="購入する">
 		</form>
