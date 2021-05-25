@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import common.DAOs;
-import common.userBean;
+import bean.userBean;
+import common.DAO;
 
 /**
  * Servlet implementation class UnSub
@@ -75,7 +75,7 @@ public class UnSub extends HttpServlet {
 				return;
 			}else {
 
-				DAOs db = new DAOs();
+				DAO db = new DAO();
 
 				db.deleteUser(userid,userpass);
 

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Optional"%>
-<%@page import="common.userBean"%>
+<%@page import="bean.userBean"%>
 <%@page import="java.util.Objects"%>
 <%@page import="java.util.List"%>
 

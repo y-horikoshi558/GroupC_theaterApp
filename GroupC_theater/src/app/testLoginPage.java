@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.userBean;
 import common.LoginDAO;
-import common.userBean;
 
 /**
  * Servlet implementation class testLoginPage

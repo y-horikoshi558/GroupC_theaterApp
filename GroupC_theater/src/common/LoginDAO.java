@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.userBean;
+
 public class LoginDAO extends DBClass{
 
 	public List<userBean> getLogin(String id ,String pass) {

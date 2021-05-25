@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Optional"%>
-<%@page import="common.userBean"%>
+<%@page import="bean.userBean"%>
 <%@page import="java.util.Objects"%>
 <%@page import="java.util.List"%>
 
@@ -88,7 +88,7 @@
 			<div class="bottomContents">
 
 					<div class="bottomLeft">
-						<form action="testLogin.jsp">
+						<form action="testTopPage.jsp">
 							<input class="btn renderTop" type="submit" value="TOPへ">
 						</form>
 					</div>

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import common.DAOs;
-import common.userBean;
+import bean.userBean;
+import common.DAO;
 
 /**
  * Servlet implementation class UserInfoReset
@@ -64,7 +64,7 @@ public class UserInfoReset extends HttpServlet {
 
 		}
 
-		DAOs db = new DAOs();
+		DAO db = new DAO();
 
 		db.updateUser(req_email, req_pass, user_id, user_pass);
 

@@ -1,26 +1,29 @@
 package app;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import bean.userBean;
 import common.DAO;
 
 /**
- * Servlet implementation class UserSubscribe
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/UserSubscribe")
-public class UserSubscribe extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserSubscribe() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,32 +41,24 @@ public class UserSubscribe extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String userName =request.getParameter("uName");
-		String userKanaName =request.getParameter("uKanaName");
-		String userEmail = request.getParameter("uEmail");
-		String userId = request.getParameter("uId");
-		String userPass = request.getParameter("uPass");
-		String userPasschk = request.getParameter("uPassCheck");
+		String id = request.getParameter("login_id");
+		String pass = request.getParameter("password");
 
+		DAO dao = new DAO();
 
+		List<userBean> userList =dao.getUserData(id, pass);
 
-			if(!userPass.equals(userPasschk)) {
+		HttpSession session = request.getSession();
+		boolean login = false;
+		if(userList.size() != 0) {
+			login = true;
+			session.setAttribute("login", login);
+			/*下記の画面遷移先は、TOP画面制作者に任せる*/
+			response.sendRedirect("jsp/top.jsp");
 
-				response.sendRedirect("view/subscribePage.jsp");
-				return;
-			}else {
-
-				//新規ユーザー登録処理
-
-			DAO db = new DAO();
-
-			db.setUser(userId, userName, userKanaName, userEmail, userPass);
-
-
-				response.sendRedirect("view/testTopPage.jsp");
-			}
-
-
+		}else {
+			response.sendRedirect("jsp/LoginError.jsp");
+		}
 
 
 	}
