@@ -16,7 +16,8 @@
 
 </head>
 <body>
-<center>
+<%--centerクラスは注意が出るのでいったん外す　margin 0 autoを使えばOk --%>
+<main>
 
 	ログイン<BR><BR>
 
@@ -34,13 +35,18 @@
 
 	</form>
 
-	<form action="#">
+	<form action="../view/testTopPage.jsp">
 
 		<button type="submit" class="btn btn-warning" name="back">戻る（TOPへ）</button>
+
+	</form>
+
+	<form action="../view/subscribePage.jsp">
 
 		<button type="submit" class="btn btn-warning" name="new_account">新規登録</button><BR><BR><BR>
 
 	</form>
-</center>
+
+</main>
 </body>
 </html>

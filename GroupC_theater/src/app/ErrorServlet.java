@@ -34,7 +34,7 @@ public class ErrorServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("jsp/Login.jsp")
+		request.getRequestDispatcher("view/Login.jsp")
 		.forward(request, response);
 	}
 

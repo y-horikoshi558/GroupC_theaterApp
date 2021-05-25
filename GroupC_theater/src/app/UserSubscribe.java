@@ -43,17 +43,20 @@ public class UserSubscribe extends HttpServlet {
 		String userEmail = request.getParameter("uEmail");
 		String userId = request.getParameter("uId");
 		String userPass = request.getParameter("uPass");
-		String userPasschk = request.getParameter("uPassCheck");
+		String userPasschx = request.getParameter("uPassCheck");
 
 
+		//入力パスワードと再入力パスワードの一致を確認する
 
-			if(!userPass.equals(userPasschk)) {
+			if(!userPass.equals(userPasschx)) {
 
 				response.sendRedirect("view/subscribePage.jsp");
+
+				//一致していない場合は再度登録ページに戻る
 				return;
 			}else {
 
-				//新規ユーザー登録処理
+		//新規ユーザー登録処理
 
 			DAO db = new DAO();
 

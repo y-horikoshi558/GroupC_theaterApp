@@ -34,34 +34,31 @@ public class myPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		/*testLoginPage.jspからのパラメータの受け取り*/
+		//String testid = request.getParameter("testId");
 
+		HttpSession session = request.getSession();//セッションの利用を開始
 
-		//testLoginのパラメータを受け取る
-		String id = request.getParameter("testId");
+		//セッションからuser_idのパラメータを受け取る
+		List<userBean> loginData = (List<userBean>)session.getAttribute("userInfo");
 
+		//セッションから値を取り出す
 
-		//DAOの利用
+			String userid = "";
+
+				for(userBean uLogin:loginData){
+					userid = uLogin.getUserId();
+				}
+
 		userInfoDAO infoDAO = new userInfoDAO();
 
-		//userBean型のリストに SQLクエリの結果を入れる
-		List<userBean> userBeanList= infoDAO.getUserData(id);
+		//表示用のデータをデータベースから持ってくる
+		List<userBean> userBeanList= infoDAO.getUserData(userid);
 
-
-
-		//コンソールでデータベースの中身を確認
+		//中身の確認
 		userBeanList.forEach(userBean -> {
 			System.out.println(userBean.getUserName());
 		});
-
-
-
-
-		//テスト用にセッションを作成する
-
-		HttpSession session = request.getSession();//セッションの開始
-
-		//session.setAttribute("atrText",id); //セッション名はatrText パラメータを格納する
-		//テストセッションここまで
 
 
 		//セッションの値が入ったList型インスタンスを次ページに送る
