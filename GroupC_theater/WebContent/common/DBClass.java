@@ -16,9 +16,11 @@ public class DBClass {
 	String connUrl = "";
 
 	public DBClass() {
-		try {
+	    try {
 		    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
+		 // フェッチ後はそれぞれの名前に変更
+		    // コミット前に空にしておくこと
 		    String serverName = "POCHI\\SQLEXPRESS";	// サーバ名
 		    String dbName = "Kensyu";						// データベース名
 
