@@ -107,6 +107,14 @@ if (Objects.isNull(ticketBean)) {
 		<form action="./Login.jsp" method="get" >
 			<input type="submit" value="ログイン" id="login">
 		</form>
+	<!--
+		*変更内容*
+			・else文以下の部分を削除ました。
+			・フォーム内の入力タグをボタン属性からsubmit要素に変えました。
+			・ボタン要素で遷移できなかったので、編集する時によろ
+			・マイページはユーザー情報がないと500になるのでセッションからユーザー情報が
+			  取れない場合はマイページを表示しないとかの処理が必要になるかもです
+	 -->
 
 	<% }%>
 	</div>
