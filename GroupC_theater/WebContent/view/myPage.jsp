@@ -25,6 +25,9 @@
 	//String userId =  (String)session.getAttribute("atrText");
 	//セッションに格納された値を受け取る。※fowardは次ページに値を入れたrequestを送るので requestでOk
 
+	request.getRequestDispatcher("Header.jsp").include(request, response);
+	request.getRequestDispatcher("/Top").include(request, response);
+
 
 	//SQLの結果を受け取り表示する。
 	List<userBean> userBeanList = (List<userBean>)session.getAttribute("sesUserBeanList");
@@ -36,9 +39,7 @@
 
 %>
 
-	<header>
-		<h2 class="PageWrapper">headerWrapper</h2>
-	</header>
+
 	<div class="main">
 		<div class="myPageWrapper">
 			<div class="page-title">
@@ -95,7 +96,7 @@
 			<div class="bottomContents">
 
 					<div class="bottomLeft">
-						<form action="testTopPage.jsp">
+						<form action="Top.jsp">
 							<input class="btn renderTop" type="submit" value="TOPへ">
 						</form>
 					</div>
