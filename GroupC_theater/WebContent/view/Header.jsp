@@ -95,25 +95,22 @@ if (Objects.isNull(ticketBean)) {
 	if (true) { //テスト用
 	%>
 	<div id="side_column_1">
-		<form action="" method="post">
-			<input type="button" value="ログアウト" id="logout">
+
+		<form action="#" method="get">
+			<input type="submit" value="ログアウト" id="logout">
 		</form>
 		<br>
-		<form action="" method="post">
-			<input type="button" value="マイページ" id="mypage">
+		<form action="../myPage" method="get" >
+			<input type="submit" value="マイページ" id="mypage" >
 		</form>
-	</div>
-	<%
-	} else {
-	%>
-	<div id="side_column_2">
-		<form action="" method="post">
-			<input type="button" value="ログイン" id="login">
+			<div id="side_column_2">
+		<form action="./Login.jsp" method="get" >
+			<input type="submit" value="ログイン" id="login">
 		</form>
+
+	<% }%>
 	</div>
-	<%
-	}
-	%>
+	</div>
 	</div>
 
 	<div id="title">

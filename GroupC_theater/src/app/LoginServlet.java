@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("login", login);
 			session.setAttribute("userInfo", userList);
 			/*下記の画面遷移先は、TOP画面制作者に任せる*/
-			response.sendRedirect("view/testTopPage.jsp");
+			response.sendRedirect("view/Top.jsp");
 
 		}else {
 			response.sendRedirect("view/LoginError.jsp");
