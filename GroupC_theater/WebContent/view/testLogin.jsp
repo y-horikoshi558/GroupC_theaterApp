@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- jQuery	の呼び出し -->
 
+<link rel="stylesheet" type="text/css" href="../public/jstylesheet.css">
+<!-- jQuery	の呼び出し -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../js/JQuery.js"></script>
 <title>Insert title here</title>
@@ -28,6 +29,7 @@
 		<input type="text" name="testPass">
 		<input type="submit" value="ログイン">
 	</form>
+
 
 
 

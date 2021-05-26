@@ -8,13 +8,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css" href="../public/jstylesheet.css">
+<!-- jQuery	の呼び出し -->
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 <%
-	List<userBean> userBeanList = (List<userBean>)session.getAttribute("login");
+
 %>
 
 <p>トップ画面のテストページです<br>ログインからのセッションの受け渡しを確認します</p>
@@ -24,6 +28,10 @@
 
 
 	<a href="./Login.jsp">ログイン</a>
+
+
+
+
 
 
 </body>

@@ -198,9 +198,9 @@ public class DAO extends DBClass{
 	        String sql = "";
 	        sql += " SELECT user_id, user_name, user_kana, email, user_pass, total_prace, mileage, rank ";
 	        sql += " FROM  顧客マスタ ";
-	        sql += " WHERE user_id = ? ";
+	        sql += " WHERE (user_id = ? ";
 	        sql += " OR email = ? ";
-	        sql += " and user_pass = ? ";
+	        sql += " )AND user_pass = ? ";
 
 	        //後で変更:レコード一つを持ってくる
 

@@ -35,7 +35,7 @@
 
 	</form>
 
-	<form action="../view/testTopPage.jsp">
+	<form action="../view/Top.jsp">
 
 		<button type="submit" class="btn btn-warning" name="back">戻る（TOPへ）</button>
 

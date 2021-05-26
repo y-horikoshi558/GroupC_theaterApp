@@ -10,7 +10,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<title>マイページ</title>
+	<link rel="stylesheet" type="text/css" href="../public/stylesheet2.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- jQuery	の呼び出し -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <title>Insert title here</title>
+<script type="text/javascript">
+
+function next(){
+	document.frm.action = "../UserInfoReset";
+	document.frm.submit();
+}
+</script>
 </head>
 <body>
 
@@ -39,23 +53,47 @@
 
 	%>
 
+	<header>
+		<h2 class="PageWrapper">headerWrapper</h2>
+	</header>
+
 	<div class="main">
 
-		<div class="title-wrapper">
-			<h1>ユーザー情報の編集</h1>
+		<div class="myPageWrapper">
+			<div class="page-title">
+				<h1 id ="title-mypage">ユーザー情報の編集
+				<span class="title-textdeco">></span>
+				</h1>
+			</div>
 		</div>
+
+		<div class="contents">
+
+			<div class="content">
+
+				<div class="info-id">
+					<p class="infolabel">ユーザーID:</p>
+					<p class="param-id"><%=user_id %></p>
+				</div>
+			</div>
+
+			<div class="content">
+
+				<div class="info-name">
+					<p class="infolabel">ユーザー名:</p>
+					<p class="param-name"><%=user_name %></p>
+				</div>
+			</div>
+
+
+			</div>
+
+
 
 		<div class="container">
 			<div class="userinfo-contents">
 
-				<div class="info-id">
-					<p>ユーザーID</p>
-					<p><%=user_id %></p>
-				</div>
-				<div class="info-name">
-					<p>ユーザー名</p>
-					<p><%=user_name %></p>
-				</div>
+
 
 				<div class="reset-email">
 					<p>メールアドレス</p>
@@ -66,31 +104,32 @@
 
 				</div>
 
+			<form action="myPage.jsp" method="post" id ="sback" name="frm">
+
 			<div class="bottom-container">
 				<div class="buttom-contents">
-					<div  class="form-back">
 
-						<form action="myPage.jsp" method="get" id ="sback">
-							<input type="submit" value="戻る" form="sback">
-						</form>
-					</div>
 					<div  class="form-check">
 
-						<form action="../UserInfoReset" method="post" id="inputreset">
+						<input type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
 
 						<input type="text" name="setEmail"  value="<%=user_email%>">
 
-						<input type="submit" value="確認">
+						<input type="button" value="確認" onClick="next()">
 
-						</form>
+					</div>
 
-						<input type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
+					<div  class="form-back">
+
+						<input type="submit" value="戻る" form="sback">
+
 					</div>
 
 				</div>
 
 			</div>
 
+			</form>
 			</div>
 
 
@@ -100,5 +139,6 @@
 
 
 
+<script src="../js/JQuery.js"></script>
 </body>
 </html>

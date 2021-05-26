@@ -49,13 +49,15 @@ public class LoginServlet extends HttpServlet {
 		List<userBean> userList =dao.getUserData(id, pass);
 
 		HttpSession session = request.getSession();
+
+		//ここの処理不安定
 		boolean login = false;
 		if(userList.size() != 0) {
 			login = true;
 			session.setAttribute("login", login);
 			session.setAttribute("userInfo", userList);
 			/*下記の画面遷移先は、TOP画面制作者に任せる*/
-			response.sendRedirect("view/testTopPage.jsp");
+			response.sendRedirect("view/Top.jsp");
 
 		}else {
 			response.sendRedirect("view/LoginError.jsp");
