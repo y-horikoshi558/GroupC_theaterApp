@@ -69,7 +69,7 @@ $(function() {
 		time[0].value = this.id.substr(11,5);
 
 		var submit = document.getElementById("submit");
-		submit.disabled = false;
+		//submit.disabled = false;
 		form.action = "../SelectSeat";
 	})
 

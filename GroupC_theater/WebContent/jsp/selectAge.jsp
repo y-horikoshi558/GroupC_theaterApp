@@ -54,7 +54,7 @@ $(function() {
 		}
 
 		// 仮遷移
-		form.action = "./jsp/selectDate.jsp";
+		form.action = "./jsp/purchase.jsp";
 
 	});
 
@@ -130,7 +130,7 @@ else
 				<input type="hidden" name="group">
 				<input type="hidden" name="price">
 			<% } %>
-			<input type="hidden" name="sumPrice" id="sumPrice">
+			<input type="hidden" name="motone" id="sumPrice">
 			<input type="submit" class="purchase" value="購入">
 		</form>
 	</div>
