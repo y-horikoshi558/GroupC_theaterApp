@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.GroupBean;
+
 public class groupDAO extends DBClass{
 
 	public List<GroupBean> getUserData(String id) {

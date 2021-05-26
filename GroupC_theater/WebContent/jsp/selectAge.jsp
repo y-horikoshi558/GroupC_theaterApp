@@ -1,5 +1,5 @@
 <%@page import="common.NullCheck"%>
-<%@page import="common.GroupBean"%>
+<%@page import="bean.GroupBean"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -53,7 +53,8 @@ $(function() {
 				return;
 		}
 
-		form.action = "selectDate.jsp";
+		// 仮遷移
+		form.action = "./jsp/selectDate.jsp";
 
 	});
 
@@ -79,8 +80,10 @@ if (NullCheck.nullCheckBoolean(title) == "" ||
 NullCheck.nullCheckBoolean(date) == "" ||
 NullCheck.nullCheckBoolean(seats[0]) == "")
 { %>
-<META http-equiv="Refresh" content="0;URL=selectDate.jsp">
-<% }
+	<META http-equiv="Refresh" content="0;URL=selectDate.jsp">
+<%
+	return;
+}
 else
 {
 	month = "" + Integer.parseInt(date.substring(5, 7));

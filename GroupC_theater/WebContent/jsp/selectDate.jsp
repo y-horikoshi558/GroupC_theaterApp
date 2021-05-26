@@ -68,7 +68,7 @@ $(function() {
 		date[0].value = this.id.substr(1,10);
 		time[0].value = this.id.substr(11,5);
 
-		form.action = "selectSeat.jsp";
+		form.action = "../SelectSeat";
 	})
 
 });
@@ -93,7 +93,8 @@ scheduleList.add(new String[]{"M01", "2021-05-26", "12:30", "A"});
 scheduleList.add(new String[]{"M01", "2021-05-27", "12:30", "A"});
 scheduleList.add(new String[]{"M01", "2021-05-28", "17:30", "B"});
 scheduleList.add(new String[]{"M01", "2021-05-29", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "A"});
+scheduleList.add(new String[]{"M01", "2021-05-30", "10:00", "A"});
+scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
 scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "D"});
 scheduleList.add(new String[]{"M01", "2021-06-01", "12:30", "A"});
 scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
@@ -104,7 +105,7 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 
 <h1><%= title %></h1>
 
-<form action="" id="form" method="GET">
+<form action="" method="GET" id="form">
 	<table border="1" style="width: 800px;" id="sheetTable">
 		<tr>
 			<th class="tableHeader">席／列</th>

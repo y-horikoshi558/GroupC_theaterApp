@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import common.groupDAO;
+import common.SeatDAO;
 
 /**
- * Servlet implementation class selectGroup
+ * Servlet implementation class SelectSeat
  */
-@WebServlet("/selectGroup")
-public class selectGroup extends HttpServlet {
+@WebServlet("/SelectSeat")
+public class SelectSeat extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public selectGroup() {
+    public SelectSeat() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,19 +35,26 @@ public class selectGroup extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		PrintWriter out = response.getWriter();
-		out.println(request.getParameter("title"));
 
-		request.setAttribute("title", request.getParameter("title"));
-		request.setAttribute("date", request.getParameter("date"));
-		request.setAttribute("screen", request.getParameter("screen"));
-		request.setAttribute("time", request.getParameter("time"));
-		request.setAttribute("seats", request.getParameterValues("seat"));
+		String title = request.getParameter("title");
+		String id = request.getParameter("id");
+		String date = request.getParameter("date");
+		String screen = request.getParameter("screen");
+		String time = request.getParameter("time");
 
-		groupDAO gd = new groupDAO();
-		List data = gd.getUserData(request.getParameter("id"));
+		request.setAttribute("title", title);
+		request.setAttribute("date", date);
+		request.setAttribute("screen", screen);
+		request.setAttribute("time", time);
+
+		SeatDAO gd = new SeatDAO();
+		List<String> data = gd.getSeat(id, date, time);
 		request.setAttribute("list", data);
 
-		request.getRequestDispatcher("./jsp/selectAge.jsp").forward(request, response);
+		int[] seatWH = gd.getSeatWH(screen);
+		request.setAttribute("seatWH", seatWH);
+
+		request.getRequestDispatcher("./jsp/selectSeat.jsp").forward(request, response);
 	}
 
 	/**
