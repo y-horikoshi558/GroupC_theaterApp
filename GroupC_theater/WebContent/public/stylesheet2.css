@@ -1,1 +1,244 @@
 @charset "UTF-8";
+
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*CSS*/
+
+header{
+
+	padding:40px;
+	background-color: #b8ad25;
+}
+
+header h2{
+	margin:0 auto;
+	width: 250px;
+	color:white;
+
+}
+
+
+.main{
+	background-color: #434343ff;
+}
+
+.myPageWrapper{
+
+	width:40%;
+	padding:40px;
+	margin:0 auto;
+
+}
+
+
+.page-title{
+	text-align:center;
+	color:white;
+	border-bottom:solid 1px #b8ad25;
+
+}
+
+.title-textdeco{
+	color: #b8ad25;;
+}
+
+.myPageContents{
+
+	height:100%;
+}
+
+.contents{
+
+	width:40%;
+	font-size: 25px;
+	padding:0 350px;
+	color:white;
+	margin:0 auto;
+
+
+}
+
+.contents p{
+
+}
+
+.content{
+	/*border:solid 1px green;*/
+	width:80%;
+	padding: 35px;
+
+
+}
+
+
+.user-dynaDate{
+	border-bottom:solid 1px white;
+	padding:0 50px;
+}
+
+.milageContents{
+
+}
+
+.milageDateBox{
+	width: 60%;
+	margin:30px auto;
+	border-radius:10px;
+	padding:25px;
+	background-color:#d9ead3ff;
+
+
+}
+
+.milageDateBox p{
+
+	font-size:25px;
+	padding:15px 25px 15px;
+}
+
+
+.bottomContents{
+
+	padding:50px 80px;
+
+}
+.bottomLeft{
+
+	display:inline-block;
+	padding:10px;
+}
+
+.renderTop{
+	padding:20px 80px;
+	background-color: #cfe2f3ff;
+}
+
+
+.bottomRight{
+	float: right;
+	display:flex;
+	width:500px;
+	padding:10px;
+
+}
+
+.renderSet{
+
+	padding: 20px 100px;
+	margin-right: 100px;
+	background-color: #fff2ccff;
+
+}
+
+.renderUnsub{
+
+	padding: 20px 60px;
+	background-color: #ea9999ff;
+}
+
+.reset-modal-wrapper{
+
+	position: fixed;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	background-color: rgba(0, 0, 0, 0.6);
+  	z-index: 100;
+  	display:none;
+}
+
+.modal {
+  	position: absolute;
+  	top: 40%;
+  	left: 40%;
+	background-color: #e6ecf0;
+	padding: 20px 0 40px;
+	border-radius: 10px;
+	width: 450px;
+	height: auto;
+	text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+
+#reset-form {
+  width: 100%;
+}
+
+#reset-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#reset-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+#submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+/**
+	userInforesetの処理
+**/
+
+.infolabel{
+	padding-right:50px;
+	float:left
+}
+
+.param-name , .param-id{
+	display:inline-block;
+	border-bottom:1px solid rgba(255,255,255,0.6);
+
+}
+
+.container{
+	width:40%;
+	margin: 0 auto;
+	border: 2px solid red;
+}
+
+.container p{
+	color:white;
+}
+
