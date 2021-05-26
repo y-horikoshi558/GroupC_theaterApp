@@ -30,6 +30,7 @@ $(function() {
 			if (seats[i].innerHTML == this.id)
 			{
 				seats[i].innerHTML = "空席";
+				$(seats[i]).css('background-color',"rgb(256, 256, 256)");
 				seat[i].value = "";
 				$(this).css('background-color','white');
 
@@ -42,8 +43,9 @@ $(function() {
 				continue;
 
 			seats[i].innerHTML = this.id;
+			$(seats[i]).css('background-color',"#FF8C00");
 			seat[i].value = this.id;
-			$(this).css('background-color','red');
+			$(this).css('background-color',"#FF4500");
 
 			break;
 		}
@@ -90,18 +92,18 @@ else
 		<h1><%= title %></h1>
 		<h2><%= month %>月<%= day %>日　<%= screen %>　<%= time %></h2>
 		<form action="" method="GET" id="form">
-			<table border="1" style="width: 800px; height: 100px;" id="sheetTable">
+			<table border="1" style="width: 600px; height: 100px;" id="sheetTable">
 				<tr>
-					<th class="tableHeader">席／列</th>
+					<th class="tableHeader" bgcolor="#FFFACD">席／列</th>
 					<% // 横幅 %>
 					<% for (int i = 0; i < seatWH[0]; i++) { %>
-					<th class="tableHeader"><%= i + 1 %></th>
+					<th class="tableHeader" bgcolor="#87cefa"><%= (i + 1) < 10 ? "　" + (i + 1) : (i + 1) %></th>
 					<% } %>
 				</tr>
 
 				<% for (int y = 0; y < seatWH[1]; y++) { %>
 				<tr>
-					<th class="tableHeader"><%= seatColumn[y] %>列</th>
+					<th class="tableHeader" bgcolor="#98FB98"><%= seatColumn[y] %>列</th>
 					<% for (int x = 0; x < seatWH[0]; x++) {
 						String tdId = seatColumn[y] + "0" + (x + 1);
 						boolean nonSelFlg = false; 			// true:選択不可

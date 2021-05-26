@@ -39,7 +39,7 @@ $(function() {
 			nonDispDay.rows[i].hidden = true;
 		}
 
-		$(this).css('background-color',"rgb(198, 198, 198)");
+		$(this).css('background-color',"#FF4500");
 
 		for (var i = 0; i < dispDay.length; i++)
 		{
@@ -62,12 +62,14 @@ $(function() {
 			$(selectTime).css('background-color','white');
 		}
 
-		$(this).css('background-color',"rgb(198, 198, 198)");
+		$(this).css('background-color',"#FF8C00");
 
 		screen[0].value = this.id.substr(0,1);
 		date[0].value = this.id.substr(1,10);
 		time[0].value = this.id.substr(11,5);
 
+		var submit = document.getElementById("submit");
+		submit.disabled = false;
 		form.action = "../SelectSeat";
 	})
 
@@ -95,7 +97,7 @@ scheduleList.add(new String[]{"M01", "2021-05-28", "17:30", "B"});
 scheduleList.add(new String[]{"M01", "2021-05-29", "12:30", "A"});
 scheduleList.add(new String[]{"M01", "2021-05-30", "10:00", "A"});
 scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "D"});
+scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
 scheduleList.add(new String[]{"M01", "2021-06-01", "12:30", "A"});
 scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 
@@ -108,7 +110,7 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 <form action="" method="GET" id="form">
 	<table border="1" style="width: 800px;" id="sheetTable">
 		<tr>
-			<th class="tableHeader">席／列</th>
+			<th class="tableHeader" bgcolor="#FFFACD">席／列</th>
 			<%
 				Date date = new Date();
 				SimpleDateFormat sdf = new SimpleDateFormat("dd");
