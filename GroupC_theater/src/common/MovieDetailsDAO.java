@@ -32,9 +32,12 @@ public class MovieDetailsDAO extends DBClass {
 			sql += "		映画マスタ as MM ";
 			sql += " ON" ;
 			sql += " 		MDM.title_id = MM.title_id ";
+			sql += " WHERE MM.title_id = ?";
 
 			//SQLからのレスポンス結果を pstmt に格納
 			pstmt = objCon.prepareStatement(sql);
+
+			pstmt.setString(1, id);
 
 			System.out.println(sql);
 
