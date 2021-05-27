@@ -37,14 +37,22 @@ public class selectGroup extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println(request.getParameter("title"));
 
-		request.setAttribute("title", request.getParameter("title"));
-		request.setAttribute("date", request.getParameter("date"));
-		request.setAttribute("screen", request.getParameter("screen"));
-		request.setAttribute("time", request.getParameter("time"));
-		request.setAttribute("seats", request.getParameterValues("seat"));
+		String title = request.getParameter("title");
+		String id = request.getParameter("id");
+		String date = request.getParameter("date");
+		String screen = request.getParameter("screen");
+		String time = request.getParameter("time");
+		String seat = request.getParameter("seat");
+
+		request.setAttribute("title", title);
+		request.setAttribute("title_id", id);
+		request.setAttribute("date", date);
+		request.setAttribute("screen", screen);
+		request.setAttribute("time", seat);
+		request.setAttribute("seats", seat);
 
 		groupDAO gd = new groupDAO();
-		List data = gd.getUserData(request.getParameter("id"));
+		List data = gd.getUserData(id);
 		request.setAttribute("list", data);
 
 		request.getRequestDispatcher("./jsp/selectAge.jsp").forward(request, response);
