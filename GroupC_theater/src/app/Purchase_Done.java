@@ -36,7 +36,7 @@ public class Purchase_Done extends HttpServlet {
     		try {
     		    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-    		    String serverName = "DESKTOP-POCHI\\SQLEXPRESS";	// サーバ名
+    		    String serverName = "DESKTOP-5A44TTQ\\SQLEXPRESS";	// サーバ名
     		    String dbName = "Kensyu";						// データベース名
 
     		    String userName = "sa";							// ユーザ名
@@ -176,12 +176,6 @@ public class Purchase_Done extends HttpServlet {
     		response.setContentType("text/html; charset = UTF-8");
 			PrintWriter out = response.getWriter();
 
-			// マージ後削除
-			//////////////////////////////////////////////////////
-			response.sendRedirect("./jsp/purchase_done.jsp");
-			if (true)return;
-			//////////////////////////////////////////////////////
-
 			//文字化け修正
 			request.setCharacterEncoding("utf-8");
 			String text = request.getParameter("text");
@@ -190,7 +184,7 @@ public class Purchase_Done extends HttpServlet {
 			String titleId = request.getParameter("title_id");
 			String title = request.getParameter("title");
 			String date = request.getParameter("date");
-			String resalt1 = date.substring(5,7) ;
+			String resalt1 = date.substring(5,7);
 			String resalt2 = date.substring(8,10);
 
 			String time = request.getParameter("time");
@@ -202,24 +196,23 @@ public class Purchase_Done extends HttpServlet {
 
 			String theater = request.getParameter("theater");
 
-
 			//アトリビュート作成(セッション属性)
 			HttpSession session = request.getSession();
-			String sUserId =(String)session.getAttribute("user_id");
-			String sMileage =(String)session.getAttribute("mileage");
+			//String sUserId =(String)session.getAttribute("user_id");
+			//String sMileage =(String)session.getAttribute("mileage");
 
-			session.setAttribute(sMileage , "mileage");
+			//session.setAttribute(sMileage , "mileage");
 
 
 			for(int i = 0;i<age.length;i++) {
 	//			istTicket((String)session.getAttribute("user_id"),"a",date,time,seat[i],age[i]);
 
 				//subStringで月日を取る
-				istTicket(resalt1+resalt2+resalt3+theater+seat[i]+age[i] ,sUserId,titleId,date,time,seat[i],age[i]);
+				istTicket(resalt1+resalt2+resalt3+theater+seat[i] ,"sUserId",titleId,date,time,seat[i],age[i]);
 			}
 
-			response.sendRedirect("./jsp/purchase_done.jsp");
 
+    			response.sendRedirect("jsp/purchase_done.jsp");
     	}
 
 }
