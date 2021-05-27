@@ -70,7 +70,7 @@ String slip_id = request.getParameter("slip_id");
 <form action = "../Top">
 
 <input type = "submit" class="purchase btn btn-outline-primary btn-lg" value = "Topへ">
-
+aaa
 </form>
 </td>
 	</tr>
