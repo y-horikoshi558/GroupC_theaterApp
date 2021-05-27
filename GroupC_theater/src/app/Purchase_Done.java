@@ -184,8 +184,11 @@ public class Purchase_Done extends HttpServlet {
 			String titleId = request.getParameter("title_id");
 			String title = request.getParameter("title");
 			String date = request.getParameter("date");
-			String resalt1 = date.substring(5,7);
-			String resalt2 = date.substring(8,10);
+
+			String[] dateAry = date.split("-");
+			String res1 = dateAry[0];
+			String res2 = dateAry[1];
+			String res3 = dateAry[2];
 
 			String time = request.getParameter("time");
 			String resalt3 = time.substring(0,2)+ time.substring(3,5);
@@ -208,7 +211,7 @@ public class Purchase_Done extends HttpServlet {
 	//			istTicket((String)session.getAttribute("user_id"),"a",date,time,seat[i],age[i]);
 
 				//subStringで月日を取る
-				istTicket(resalt1+resalt2+resalt3+theater+seat[i] ,"sUserId",titleId,date,time,seat[i],age[i]);
+				istTicket(res2+res3+resalt3+theater+seat[i] ,"sUserId",titleId,date,time,seat[i],age[i]);
 			}
 
 
