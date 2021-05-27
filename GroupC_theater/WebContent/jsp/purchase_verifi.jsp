@@ -121,9 +121,6 @@ String mileage = request.getParameter("mileage");
 String sUser_id = (String)session.getAttribute("user_id");
 String sMileage = (String)session.getAttribute("mileage");
 
-String credit = request.getParameter("credit");
-String credit1 = request.getParameter("credit1");
-String credit2 = request.getParameter("credit2");
 String credit3 = request.getParameter("credit3");
 
 String[] seats = new String[6];

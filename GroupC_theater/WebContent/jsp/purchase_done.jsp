@@ -8,7 +8,7 @@
 
 <style>
 	body{
-			background-color:silver;
+			background-color:#c4e9e6;
 			margin:30px;
 			padding : 20px ;
 			align:center;
@@ -44,7 +44,7 @@
 ヘッダー
 </header>
 <%
-String slip_id = (String)session.getAttribute("slip_id");
+String slip_id = request.getParameter("slip_id");
 %>
 
 <br><br>
@@ -63,12 +63,18 @@ String slip_id = (String)session.getAttribute("slip_id");
 </table>
 
 <br><br>
+<table border="0" width="300px">
+	<tr>
+		<td>
 
-<form action = "Top.jsp">
+<form action = "../Top">
 
-<input type = "submit" value = "Topへ">
-
+<input type = "submit" class="purchase btn btn-outline-primary btn-lg" value = "Topへ">
+aaa
 </form>
+</td>
+	</tr>
+</table>
 </center>
 </body>
 </html>
