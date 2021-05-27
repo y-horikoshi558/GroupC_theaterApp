@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.List;
+
 public class MovieDetailsBean {
 
 	private String titleId;
@@ -11,6 +13,7 @@ public class MovieDetailsBean {
 	private String image3;
 	private String image4;
 	private String image5;
+	private List<String> imageList;
 
 	public String getTitleId() {
 		return titleId;
@@ -66,6 +69,12 @@ public class MovieDetailsBean {
 	}
 	public void setImage5(String image5) {
 		this.image5 = image5;
+	}
+	public List<String> getImageList() {
+		return imageList;
+	}
+	public void setImageList(List<String> imageList) {
+		this.imageList = imageList;
 	}
 
 }
