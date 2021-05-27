@@ -64,7 +64,7 @@ String slip_id = (String)session.getAttribute("slip_id");
 
 <br><br>
 
-<form action = "../Top">
+<form action = "Top.jsp">
 
 <input type = "submit" value = "Topへ">
 

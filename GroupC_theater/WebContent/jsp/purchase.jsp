@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -24,8 +26,6 @@
    h2{
    		color:black;
    }
-
-	table{}
 
 	table#ticket1{
 		font-size:25px;
@@ -117,7 +117,7 @@
 	    <!-- BootstrapのJS読み込み -->
 	    <script src="../js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:#c4e9e6;">
 <center>
 
 <h1>チケット購入ページ</h1>
@@ -128,6 +128,7 @@
 </header>
 
 <script type="text/javascript">
+
 
 //マイレージが押されているかの判定
 function myfunc(){
@@ -158,6 +159,14 @@ var sumsum = document.getElementById("sumPrice");		//値受け渡し用合計金
 	 }
 }
 
+
+const input = document.querySelector('input[type="number"]')
+input.addEventListener('input', function(e) {
+  const value = e.target.value
+  if (value >= 4) {
+    e.target.value = value.slice(0, 4)
+  }
+})
 </script>
 
 <br><br>
@@ -250,10 +259,10 @@ if (flg == null) flg = "";
 
   <tr>
  <td>
-    <input id="credit" type="number" maxlength="4" placeholder="0000" name="credit" >
-    <input type="number" maxlength="4" placeholder="0000" name="credit">
-    <input type="number" maxlength="4" placeholder="0000" name="credit">
-    <input id = "credit1" type="number" maxlength="4" placeholder="0000" name="credit">
+    <input id="credit" type="number" max="9999" maxlength="4" placeholder="0000" name="credit" >
+    <input type="number" maxlength="4" max="9999" placeholder="0000" name="credit1">
+    <input type="number" maxlength="4" max="9999" placeholder="0000" name="credit2">
+    <input type="number" maxlength="4" max="9999" placeholder="0000" name="credit3">
 </td>
 </tr>
 </table>
@@ -269,15 +278,15 @@ if (flg == null) flg = "";
 </table>
 
 <br><br>
-<div class="landscape">
-
+<table border="0" width="300px">
+	<tr>
+		<td>
 			<input type="hidden" name="title_id" value=<%= title_id %>>
 			<input type="hidden" name="title" value=<%= title %>>
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= theater %>>
 			<input type="hidden" name="time" value=<%= time %>>
 			<% for (int i = 0; i < seats.length; i++) { %>
-			<%= seats[i] %>
 				<input type="hidden" name=<%="seat"%> value=<%= seats[i] %>>
 
 				<input type="hidden" name="group" value=<%= group[i] %>>
@@ -287,28 +296,26 @@ if (flg == null) flg = "";
 			<input type="hidden" id="sumPrice" name = "sumPrice" value=<%= sumPrice %>>
 			<input type="hidden" name = "motone" value=<%=request.getParameter("motone")%>>
 			<input type="hidden" id="credit" name = "credit">
-			<input type="submit" class="purchase" id = "kou" value="購入">
-</div>
+			<input type="submit" class="purchase btn btn-outline-primary btn-lg" id = "kou" value="購入">
 </form>
-
+	</td>
+	<td>
 <form action="selectAge.jsp" id="form" method="GET">
-<div class="landscape" >
 			<input type="hidden" name="title" value=<%= title %>>
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= theater %>>
 			<input type="hidden" name="time" value=<%= time %>>
 			<% for (int i = 0; i < seats.length; i++) { %>
-			<%= seats[i] %>
 			<input type="hidden" name="seat"value=<%= seats[i] %>>
 			<input type="hidden" id="sumPrice" value=<%= sumPrice %>>
 				<input type="hidden" name="group">
 				<input type="hidden" name="price">
 			<% } %>
-			<input type="submit" class="purchase" value="戻る">
-			</div>
+			<input type="submit" class="purchase btn btn-outline-success btn-lg" value="戻る">
 		</form>
-
-
+	</td>
+	</tr>
+</table>
 </center>
 </body>
 </html>

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +10,7 @@
 
 <style>
 	body{
-		background-color:silver;
+		background-color:white;
 		margin:30px;
 		padding : 20px ;
 		align:center;
@@ -62,7 +63,7 @@
 
 		width:1200px;
 		margin:0 auto;
-		border: solid 3px purple;
+		border: solid 3px #e8d99a;
 		text-align:center;
 		border-radius: 0.5em;
 	}
@@ -86,8 +87,15 @@
 
 </style>
 
+ <!-- BootstrapのCSS読み込み -->
+	    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <!-- jQuery読み込み -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <!-- BootstrapのJS読み込み -->
+	    <script src="../js/bootstrap.min.js"></script>
+
 </head>
-<body>
+<body style="background-color:#c4e9e6;">
 
 <center>
 <h1>チケット購入確認</h1>
@@ -114,6 +122,9 @@ String sUser_id = (String)session.getAttribute("user_id");
 String sMileage = (String)session.getAttribute("mileage");
 
 String credit = request.getParameter("credit");
+String credit1 = request.getParameter("credit1");
+String credit2 = request.getParameter("credit2");
+String credit3 = request.getParameter("credit3");
 
 String[] seats = new String[6];
 seats = request.getParameterValues("seat");
@@ -165,13 +176,15 @@ price = request.getParameterValues("price");
 <table id = "ticket4">
 <%--クレカの下4桁だけを表示させる--%>
 <td>
-<%= flg %>
-<%=credit%>
-</td>
+  クレジットカード番号:　 ****-****-****-<%= credit3 %></td>
+ <td></td>
+
 </table>
 
 <br><br>
-
+<table border="0" width="300px">
+	<tr>
+		<td>
 <div class = "landscape">
 <input type="hidden" name="title_id" value=<%= title_id %>>
 <input type="hidden" name="title" value=<%= title %>>
@@ -185,9 +198,11 @@ price = request.getParameterValues("price");
 <% } %>
 <input type="hidden" name="sumPrice" value=<%= sumPrice %>>
 
-<input type = "submit" value = "購入">
+<input type = "submit" class="purchase btn btn-outline-primary btn-lg" value = "購入">
 </div>
 </form>
+</td>
+	<td>
 
 <form action = "purchase.jsp">
 <div class= "landscape">
@@ -203,10 +218,13 @@ price = request.getParameterValues("price");
 <input type="hidden" name="motone" value=<%=request.getParameter("motone")%>>
 <input type="hidden" name="sumPrice" value=<%= sumPrice %>>
 <input type="hidden" name="maneger" value=<%= flg %> >
-<input type = "submit" value = "戻る">
+<input type = "submit"class="purchase btn btn-outline-success btn-lg" value = "戻る">
 </div>
 </form>
 
+</td>
+	</tr>
+</table>
 </center>
 
 </body>
