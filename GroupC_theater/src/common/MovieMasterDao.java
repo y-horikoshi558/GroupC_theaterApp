@@ -26,8 +26,8 @@ public class MovieMasterDao extends DBClass{
 	        sql += " SELECT TOP(3) * ";
 	        sql += " FROM  映画マスタ inner join 映画詳細マスタ ";
 	        sql += " ON  映画マスタ.title_id = 映画詳細マスタ.title_id ";
-	        sql += " WHERE	映画マスタ.screening_start <= getdate() ";
-	        sql += " AND	映画マスタ.screening_end >= getdate()";
+	        sql += " WHERE	NOT (映画マスタ.screening_start >= getdate() ";
+	        sql += " AND	映画マスタ.screening_end >= getdate()) ";
 
 	        pstmt = objCon.prepareStatement(sql);
 
@@ -63,7 +63,7 @@ public class MovieMasterDao extends DBClass{
 	        	mb.setMovieStory(rset.getString("story"));
 	        	String[] images = new String[5];
 	        	for(int i = 0;i < 5; i ++) {
-	        		images[i] = rset.getString("image_0" + i);
+	        		images[i] = rset.getString("image_0" + (i + 1));
 	        	}
 	        	mb.setMovieImages(images);
 
