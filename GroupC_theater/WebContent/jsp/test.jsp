@@ -8,7 +8,11 @@
 </head>
 <body>
 
+<%
+String titleId = request.getParameter("titleId");
+%>
 
+<%= titleId %>
 
 </body>
 </html>

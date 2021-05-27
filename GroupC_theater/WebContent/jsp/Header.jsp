@@ -129,8 +129,8 @@ if (Objects.isNull(ticketBean)) {
 
 	<br>
 	<div id="menu">
-		<form action="" method="post">
-			<input type="button" value="映画一覧" id="movielist">
+		<form action="movieList.jsp" method="post">
+			<input type="submit" value="映画一覧" id="movielist">
 		</form>
 	</div>
 </body>
