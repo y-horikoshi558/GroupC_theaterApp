@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+<%@ page import = "java.util.List" %>
+<%@page import = "bean.userBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,7 +181,12 @@ String time  = request.getParameter("time");
 String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("motone"); //動かないもともとの金額
 String sumPrice2 = request.getParameter("sumPrice"); //マイレージの変動あり
-String mileage = (String)session.getAttribute("mileage");
+List<userBean> sUserId =(List<userBean>)session.getAttribute("sesUserBeanList");
+int userMile = 0;
+
+for(userBean uB :sUserId ) {
+	userMile = uB.getMileage();
+}
 String maneger =  request.getParameter("maneger");
 
 
@@ -292,7 +297,7 @@ if (flg == null) flg = "";
 				<input type="hidden" name="group" value=<%= group[i] %>>
 				<input type="hidden" name="price" value=<%= price[i] %>>
 			<% } %>
-			<input type="hidden" id="credit" name = "mileage" value =<%= mileage %>>
+			<input type="hidden" id="credit" name = "mileage" value =<%= userMile %>>
 			<input type="hidden" id="sumPrice" name = "sumPrice" value=<%= sumPrice %>>
 			<input type="hidden" name = "motone" value=<%=request.getParameter("motone")%>>
 			<input type="hidden" id="credit" name = "credit">

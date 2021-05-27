@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import bean.userBean;
 
 /**
  * Servlet implementation class Purchase_Done
@@ -198,20 +201,29 @@ public class Purchase_Done extends HttpServlet {
 			String[] seat = request.getParameterValues("seat");
 
 			String theater = request.getParameter("theater");
+			String mileage = request.getParameter("mileage");
+
+
 
 			//アトリビュート作成(セッション属性)
 			HttpSession session = request.getSession();
-			//String sUserId =(String)session.getAttribute("user_id");
-			//String sMileage =(String)session.getAttribute("mileage");
+			List<userBean> sUserId =(List<userBean>)session.getAttribute("sesUserBeanList");
+			String userId = "";
+			int userMile = 0;
 
-			//session.setAttribute(sMileage , "mileage");
+			for(userBean uB :sUserId ) {
+				userId = uB.getUserId();
+				userMile = uB.getMileage();
+			}
+
+
+			session.setAttribute( "mileage" , userMile - Integer.parseInt(mileage));
 
 
 			for(int i = 0;i<age.length;i++) {
-	//			istTicket((String)session.getAttribute("user_id"),"a",date,time,seat[i],age[i]);
 
 				//subStringで月日を取る
-				istTicket(res2+res3+resalt3+theater+seat[i] ,"sUserId",titleId,date,time,seat[i],age[i]);
+				istTicket(res2+res3+resalt3+theater+seat[i] ,userId,titleId,date,time,seat[i],age[i]);
 			}
 
 

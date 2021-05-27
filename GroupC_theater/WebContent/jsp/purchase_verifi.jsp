@@ -117,7 +117,7 @@ String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("sumPrice");
 
 String flg = request.getParameter("maneger");
-String mileage = request.getParameter("mileage");
+String userMile = request.getParameter("mileage");
 String sUser_id = (String)session.getAttribute("user_id");
 String sMileage = (String)session.getAttribute("mileage");
 
@@ -194,6 +194,7 @@ price = request.getParameterValues("price");
 <input type="hidden" name="price" value=<%= price[i] %>>
 <% } %>
 <input type="hidden" name="sumPrice" value=<%= sumPrice %>>
+<input type="hidden" id="credit" name = "mileage" value =<%= userMile %>>
 
 <input type = "submit" class="purchase btn btn-outline-primary btn-lg" value = "購入">
 </div>
