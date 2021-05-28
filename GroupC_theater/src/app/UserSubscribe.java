@@ -63,7 +63,7 @@ public class UserSubscribe extends HttpServlet {
 			db.setUser(userId, userName, userKanaName, userEmail, userPass);
 
 
-				response.sendRedirect("view/testTopPage.jsp");
+				response.sendRedirect("jsp/Top.jsp");
 			}
 
 
