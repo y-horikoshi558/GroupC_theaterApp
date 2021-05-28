@@ -2,6 +2,8 @@
 <%@page import="java.util.Calendar"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.List"%>
+<%@page import="bean.DateBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -79,27 +81,16 @@ $(function() {
 
 <body>
 <%
-String title = "名探偵オグリ　勝利の鼓動";
-String id = "M01";
-ArrayList<String[]> scheduleList = new ArrayList<String[]>();
-scheduleList.add(new String[]{"M01", "2021-05-24", "10:00", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-24", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-24", "15:00", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-24", "17:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-25", "10:00", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-25", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-25", "17:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-25", "12:30", "C"});
-scheduleList.add(new String[]{"M01", "2021-05-25", "17:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-26", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-27", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-28", "17:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-29", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-30", "10:00", "A"});
-scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
-scheduleList.add(new String[]{"M01", "2021-06-01", "12:30", "A"});
-scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
+String title 	= (String)request.getAttribute("name");
+String id 		= (String)request.getAttribute("id");
+List<DateBean> scheduleList = (List<DateBean>)request.getAttribute("list");
+//scheduleList.add(new String[]{"M01", "2021-05-28", "17:30", "B"});
+//scheduleList.add(new String[]{"M01", "2021-05-29", "12:30", "A"});
+//scheduleList.add(new String[]{"M01", "2021-05-30", "10:00", "A"});
+//scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
+//scheduleList.add(new String[]{"M01", "2021-05-30", "12:30", "B"});
+//scheduleList.add(new String[]{"M01", "2021-06-01", "12:30", "A"});
+//scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 
 %>
 
@@ -136,16 +127,16 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 
 
 	<% // 上映するスクリーンを識別
-	ArrayList<String> stheaters = new ArrayList<String>();
-	stheaters.add(scheduleList.get(0)[3]);
+	List<String> stheaters = new ArrayList<String>();
+	stheaters.add(scheduleList.get(0).getScreen());
 	for (int i = 1; i < scheduleList.size(); i++) {
 		for (int j = 0; j < stheaters.size(); j++) {
-			if (stheaters.get(j) == scheduleList.get(i)[3])
+			if (stheaters.get(j) == scheduleList.get(i).getScreen())
 				break;
 			if (j != stheaters.size() - 1)
 				continue;
 
-			stheaters.add(scheduleList.get(i)[3]);
+			stheaters.add(scheduleList.get(i).getScreen());
 			break;
 		}
 	} %>
@@ -157,9 +148,9 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 			<tr id=<%= day[k] %> name=<%= day[k] %> hidden>
 			<% for (int j = 0; j < scheduleList.size(); j++) { %>
 				<% // 日付チェック　getの添え字を変えると日付変更可能 %>
-				<% if (!day[k].equals(scheduleList.get(j)[1].substring(8, 10))) continue; %>
-				<% // シアターチェック %>
-				<% String sday = scheduleList.get(j)[3]; %>
+				<% if (!day[k].equals(scheduleList.get(j).getDate().substring(8, 10))) continue; %>
+				<% // スクリーンチェック %>
+				<% String sday = scheduleList.get(j).getScreen(); %>
 				<% if (stheaters.get(i) != sday) continue; %>
 
 				<% if (!once) { %>
@@ -167,9 +158,9 @@ scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 					<th><%= stheaters.get(i) %> Screen</th>
 				<% } %>
 
-				<% String tdId = sday + scheduleList.get(j)[1] + scheduleList.get(j)[2]; %>
-				<td class="selectTime" id=<%= tdId %> name="selectTime"><%= scheduleList.get(j)[1] %><br>
-				<%= scheduleList.get(j)[2] %></td>
+				<% String tdId = sday + scheduleList.get(j).getDate() + scheduleList.get(j).getTime(); %>
+				<td class="selectTime" id=<%= tdId %> name="selectTime"><%= scheduleList.get(j).getDate() %><br>
+				<%= scheduleList.get(j).getTime() %></td>
 
 			<% } %>
 			</tr>

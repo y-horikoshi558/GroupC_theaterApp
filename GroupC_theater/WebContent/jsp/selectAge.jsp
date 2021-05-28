@@ -23,6 +23,7 @@ $(function() {
 
 		var select = document.getElementsByName("select");
 		var group = document.getElementsByName("group");
+		var groupId = document.getElementsByName("groupId");
 		var price = document.getElementsByName("price");
 		var sumPrice = document.getElementById("sumPrice");
 		var sumPriceDisp = document.getElementById("sumDisp");
@@ -32,6 +33,7 @@ $(function() {
 		{
 			var selectNum = document.getElementById("select"+i);
 			group[i].value = selectNum[selectNum.selectedIndex].innerHTML;
+			groupId[i].value = selectNum[selectNum.selectedIndex].name;
 
 			price[i].value = select[i].value;
 			sum += Number(select[i].value);
@@ -108,7 +110,7 @@ else
 		<select class="selectGroup" name="select" id="select<%= i %>">
 			<option value="0" selected>選択してください。</option>
 			<% for (int j = 0; j < groupList.size(); j++) { %>
-			<option value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
+			<option name=<%= groupList.get(i).getId() %> value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
 			<% } %>
 		</select>
 
@@ -130,6 +132,7 @@ else
 			<% for (int i = 0; i < seats.length; i++) { %>
 				<input type="hidden" name="seat"value=<%= seats[i] %>>
 				<input type="hidden" name="group">
+				<input type="hidden" name="groupId">
 				<input type="hidden" name="price">
 			<% } %>
 			<input type="hidden" name="motone" id="sumPrice">
