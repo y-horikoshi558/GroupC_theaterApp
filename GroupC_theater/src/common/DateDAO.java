@@ -30,6 +30,7 @@ public class DateDAO extends DBClass {
 			sql += " SELECT	date, start, theater ";
 			sql += " FROM  	時間管理";
 			sql += " WHERE	title_id = ? ";
+			sql += " ORDER BY theater ASC ";
 
 			// 実行SQL確認
 			System.out.println(sql);
