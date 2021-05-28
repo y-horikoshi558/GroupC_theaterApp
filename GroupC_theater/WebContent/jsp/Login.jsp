@@ -35,13 +35,13 @@
 
 	</form>
 
-	<form action="../view/Top.jsp">
+	<form action="../jsp/Top.jsp">
 
 		<button type="submit" class="btn btn-warning" name="back">戻る（TOPへ）</button>
 
 	</form>
 
-	<form action="../view/subscribePage.jsp">
+	<form action="../jsp/subscribePage.jsp">
 
 		<button type="submit" class="btn btn-warning" name="new_account">新規登録</button><BR><BR><BR>
 

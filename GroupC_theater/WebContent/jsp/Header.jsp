@@ -91,6 +91,14 @@ if (Objects.isNull(ticketBean)) {
 <body>
 
 	<%
+		if(Objects.isNull(session.getAttribute("login"))){
+
+		//セッションを開始してログイン情報を設定する
+		HttpSession sessionLogin = request.getSession();
+		sessionLogin.setAttribute("login", false);
+
+		}
+
 
 	%>
 
@@ -101,7 +109,7 @@ if (Objects.isNull(ticketBean)) {
 	%>
 	<div id="side_column_1">
 
-		<form action="#" method="get">
+		<form action="logout-in.jsp" method="get">
 			<input type="submit" value="ログアウト" id="logout">
 		</form>
 		<br>

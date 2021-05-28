@@ -40,7 +40,7 @@ public class UnSubPage extends HttpServlet {
 
 
 
-		response.sendRedirect("view/unSubscribe.jsp");
+		response.sendRedirect("jsp/unSubscribe.jsp");
 
 
 

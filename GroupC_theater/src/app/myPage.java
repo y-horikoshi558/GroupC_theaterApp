@@ -32,12 +32,19 @@ public class myPage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
 		// TODO Auto-generated method stub
 
 		/*testLoginPage.jspからのパラメータの受け取り*/
 		//String testid = request.getParameter("testId");
 
 		HttpSession session = request.getSession();//セッションの利用を開始
+
+		boolean loginchx = (boolean) session.getAttribute("login");
+
+		if(loginchx != false) {
 
 		//セッションからuser_idのパラメータを受け取る
 		List<userBean> loginData = (List<userBean>)session.getAttribute("userInfo");
@@ -65,7 +72,11 @@ public class myPage extends HttpServlet {
 		session.setAttribute("sesUserBeanList", userBeanList);
 
 		//リロードを回避する為のリダイレクト処理
-		response.sendRedirect("view/myPage.jsp");
+		response.sendRedirect("jsp/myPage.jsp");
+
+		}else {
+			response.sendRedirect("jsp/Login.jsp");
+		}
 
 	}
 
