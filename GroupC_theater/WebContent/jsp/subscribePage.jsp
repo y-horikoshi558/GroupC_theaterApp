@@ -55,6 +55,8 @@
 
 			</form>
 
+			<a href="./Top.jsp">TOPに戻る</a>
+
 
 
 

@@ -17,7 +17,11 @@ public class DBClass {
 
 		    // フェッチ後はそれぞれの名前に変更
 		    // コミット前に空にしておくこと
+<<<<<<< HEAD
 		    String serverName = "DESKTOP-5A44TTQ\\SQLEXPRESS";	// サーバ名
+=======
+		    String serverName = "LAPTOP-9ULJU3DP\\SQLEXPRESS";	// サーバ名
+>>>>>>> branch 'BrushUp' of https://github.com/y-horikoshi558/GroupC_theaterApp
 
 
 		    String dbName = "GroupC";						// データベース名

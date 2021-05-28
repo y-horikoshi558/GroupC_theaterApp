@@ -46,6 +46,16 @@ public class UserSubscribe extends HttpServlet {
 		String userPasschx = request.getParameter("uPassCheck");
 
 
+		if(		userName.equals("") &&
+				userKanaName.equals("") &&
+				userId.equals("") &&
+				userPass.equals("")
+		  ) {
+
+			response.sendRedirect("jsp/LoginError.jsp");
+			return;
+		}
+
 		//入力パスワードと再入力パスワードの一致を確認する
 
 			if(!userPass.equals(userPasschx)) {
@@ -63,7 +73,7 @@ public class UserSubscribe extends HttpServlet {
 			db.setUser(userId, userName, userKanaName, userEmail, userPass);
 
 
-				response.sendRedirect("view/testTopPage.jsp");
+				response.sendRedirect("jsp/Top.jsp");
 			}
 
 

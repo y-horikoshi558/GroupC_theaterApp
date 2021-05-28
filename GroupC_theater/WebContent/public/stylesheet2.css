@@ -36,6 +36,22 @@ header h2{
 }
 
 
+.image-wrapper{
+
+	height:100px;
+	width:100%;
+	background-image: url("../image/alex-litvin-MAYsdoYpGuk-unsplash.jpg");
+	background-size: cover;
+}
+
+.image-wrapper2{
+
+	height:100px;
+	width:100%;
+	background-image: url("../image/noom-peerapong-2uwFEAGUm6E-unsplash.jpg");
+	background-size: cover;
+}
+
 .main{
 	background-color: #434343ff;
 }
@@ -63,6 +79,19 @@ header h2{
 .myPageContents{
 
 	height:100%;
+}
+
+.sub-title-wrapper{
+	width:40%;
+	margin:0 auto;
+	border-bottom: 1px solid #b8ad25;
+	padding-left:20px;
+}
+
+.sub-title{
+	font-size:25px;
+	color:white;;
+
 }
 
 .contents{
@@ -234,11 +263,54 @@ header h2{
 
 .container{
 	width:40%;
+	padding:20px 0 10px;
 	margin: 0 auto;
-	border: 2px solid red;
+
+
+}
+
+.inputDeco1{
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
 }
 
 .container p{
 	color:white;
+	padding:10px 0 15px;
+	font-size: 24px;
+
 }
+
+.reset-email{
+	width:500px;
+	margin:0 auto;
+
+}
+
+.reset-pass{
+	width:500px;
+	margin:0 auto;
+
+}
+
+.buttom-contents{
+
+
+	height:200px;
+}
+
+.bottom-container input{
+
+	float:left;
+	padding:10px 50px;
+	margin:40px 100px 10px;
+}
+
+
+
+
 
