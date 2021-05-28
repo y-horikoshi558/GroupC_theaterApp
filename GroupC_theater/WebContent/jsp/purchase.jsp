@@ -181,6 +181,8 @@ String time  = request.getParameter("time");
 String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("motone"); //動かないもともとの金額
 String sumPrice2 = request.getParameter("sumPrice"); //マイレージの変動あり
+String sUser_id = (String)session.getAttribute("user_id");
+String mileage = request.getParameter("mileage");//マイレージ取得
 List<userBean> sUserId =(List<userBean>)session.getAttribute("userInfo");
 int userMile = 0;
 

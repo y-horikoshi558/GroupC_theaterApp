@@ -56,14 +56,14 @@ String slip_id = request.getParameter("slip_id");
 
 <br><br>
 
-<table>
-<td>
-チケットID : <%=slip_id%>
-</td>
-</table>
+
+
+<div class="tikect">チケットID : <%=slip_id%></div>
+
+
 
 <br><br>
-<table border="0" width="300px">
+<table border="0" name="top" width="300px">
 	<tr>
 		<td>
 

@@ -116,9 +116,9 @@ String time  = request.getParameter("time");
 String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("sumPrice");
 
+String sUser_id = (String)session.getAttribute("user_id");
 String flg = request.getParameter("maneger");
 String userMile = request.getParameter("mileage");
-String sUser_id = (String)session.getAttribute("user_id");
 //String sMileage = (String)session.getAttribute("mileage");
 
 String credit3 = request.getParameter("credit3");

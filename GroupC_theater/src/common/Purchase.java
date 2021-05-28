@@ -32,6 +32,7 @@ public class Purchase extends DBClass{
 
 
 
+
 //		//Statementを生成
 //	    Statement stmt;
 
