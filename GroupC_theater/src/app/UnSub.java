@@ -79,7 +79,8 @@ public class UnSub extends HttpServlet {
 
 				db.deleteUser(userid,userpass);
 
-				response.sendRedirect("jsp/testTopPage.jsp");
+				session.removeAttribute("login");
+				response.sendRedirect("jsp/Top.jsp");
 
 			}
 
