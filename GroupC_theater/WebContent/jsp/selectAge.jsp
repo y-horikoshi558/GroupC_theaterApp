@@ -20,9 +20,9 @@
 
 $(function() {
 	$('.selectGroup').on("change", function(){
-
 		var select = document.getElementsByName("select");
 		var group = document.getElementsByName("group");
+		var gId = document.getElementsByName("gId");
 		var groupId = document.getElementsByName("groupId");
 		var price = document.getElementsByName("price");
 		var sumPrice = document.getElementById("sumPrice");
@@ -32,13 +32,13 @@ $(function() {
 		for (var i = 0; i < select.length; i++)
 		{
 			var selectNum = document.getElementById("select"+i);
+			alert(selectNum[selectNum.selectedIndex].name);
 			group[i].value = selectNum[selectNum.selectedIndex].innerHTML;
-			groupId[i].value = selectNum[selectNum.selectedIndex].name;
+			groupId[i].value = gId[i].value;
 
 			price[i].value = select[i].value;
 			sum += Number(select[i].value);
 		}
-
 		sumPrice.value = sum;
 		sumPriceDisp.innerHTML = sum;
 
@@ -111,6 +111,7 @@ else
 			<option value="0" selected>選択してください。</option>
 			<% for (int j = 0; j < groupList.size(); j++) { %>
 			<option name=<%= groupList.get(i).getId() %> value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
+
 			<% } %>
 		</select>
 
@@ -129,10 +130,12 @@ else
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= screen %>>
 			<input type="hidden" name="time" value=<%= time %>>
+			<% for (int i = 0; i < groupList.size(); i++) { %>
+				<input type="hidden" name="groupId" value=<%= groupList.get(i).getId() %>>
+			<% } %>
 			<% for (int i = 0; i < seats.length; i++) { %>
 				<input type="hidden" name="seat"value=<%= seats[i] %>>
 				<input type="hidden" name="group">
-				<input type="hidden" name="groupId">
 				<input type="hidden" name="price">
 			<% } %>
 			<input type="hidden" name="motone" id="sumPrice">

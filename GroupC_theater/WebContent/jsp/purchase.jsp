@@ -184,9 +184,7 @@ String sumPrice2 = request.getParameter("sumPrice"); //マイレージの変動�
 List<userBean> sUserId =(List<userBean>)session.getAttribute("sesUserBeanList");
 int userMile = 0;
 
-for(userBean uB :sUserId ) {
-	userMile = uB.getMileage();
-}
+
 String maneger =  request.getParameter("maneger");
 
 

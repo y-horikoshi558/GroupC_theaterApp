@@ -73,7 +73,7 @@ $(function() {
 
 		var submit = document.getElementById("submit");
 		//submit.disabled = false;
-		form.action = "../SelectSeat";
+		form.action = "./SelectSeat";
 	})
 
 });
