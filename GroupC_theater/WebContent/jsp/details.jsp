@@ -36,11 +36,13 @@
 	MovieDetailsDAO db = new MovieDetailsDAO();
 	List<MovieDetailsBean> movies= db.getMDBean(id);
 
-	MovieDetailsBean md = new MovieDetailsBean();
-
-	/*
-		各要素ごとの変数を準備
-		このやり方はあまりよくないのでArrayListにまとめてください
+ 	String titleId  	= movies.get(0).getTitleId();
+ 	String titleName 	= movies.get(0).getTitleName();
+	String poster   	= movies.get(0).getPoster();
+ 	String Story    	= movies.get(0).getStory();
+ 	String[] image		= new String[5];
+	for (int i = 0; i < image.length; i++)
+		image[i] = "";
 
 	*/
 
@@ -54,20 +56,227 @@
 	  String image_4 ="";
 	  String image_5 ="";
 
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
+	if (movies.get(0).getImage1() != null)
+	{
+		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
+	}
+	if (movies.get(0).getImage2() != null)
+	{
+		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
+	}
+	if (movies.get(0).getImage3() != null)
+	{
+		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
+	}
+	if (movies.get(0).getImage4() != null)
+	{
+		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
+	}
+	if (movies.get(0).getImage5() != null)
+	{
+		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
+	}
+
 
 %>
 
-
-<h1>映画詳細画面</h1>
-
 <div align="center">
+
+<h1><%= titleName %></h1>
+
 <div id="slick01">
 <div><a href="#content01"><img src=<%=image_1 %> width="500" height="400" alt="アイキャッチ画像01"></a></div>
 <div><a href="#content02"><img src= <%=image_2 %> width="750" height="400" alt="アイキャッチ画像02"></a></div>
 <div><a href="#content03"><img src= ""width="750" height="400" alt="アイキャッチ画像03"></a></div>
 <div><a href="#content04"><img src="" width="750" height="400" alt="アイキャッチ画像04"></a></div>
 <div><a href="#content04"><img src= ""width="750" height="400" alt="アイキャッチ画像05"></a></div>
-</div>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
+<% for (int i = 0; i < image.length; i++) { %>
+<%	if (image[i].equals("")) continue; %>
+	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
+<% } %>
 </div>
 
 <script type="text/javascript">
@@ -80,20 +289,14 @@ dots: true, //ドットインジケータの表示
 
 
 </script>
-<p>名探偵コナソ<BR></BR>
-</p>
 
-<p><%=id %></p>
-<p><%=Story %></p>
-<p><%=image_1 %></p>
-<p><%=image_2 %></p>
-<img alt="" src="image_1">
-<img alt="" src="<%=image_1%>">
-
-<form action="./jsp/selectDate.jsp">
-<input type ="hidden" name="title_id" value="タイトル" >
-<input type="submit" value="日付、時間帯選択ページへ" >
+<form action="./SelectDate">
+<input type ="hidden" name="id" value=<%= titleId %> >
+<input type ="hidden" name="name" value=<%= titleName %>>
+<input type="submit" value="チケット予約はこちらから" >
 </form>
+
+</div>
 </body>
 
 </html>
