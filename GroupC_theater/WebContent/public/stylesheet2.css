@@ -44,6 +44,14 @@ header h2{
 	background-size: cover;
 }
 
+.image-wrapper2{
+
+	height:100px;
+	width:100%;
+	background-image: url("../image/noom-peerapong-2uwFEAGUm6E-unsplash.jpg");
+	background-size: cover;
+}
+
 .main{
 	background-color: #434343ff;
 }

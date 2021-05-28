@@ -71,7 +71,7 @@ public class UnSub extends HttpServlet {
 
 
 			if(!userid.equals(chxuserid) && !userpass.equals(chxuserpass)) {
-				response.sendRedirect("view/unSubscribe.jsp");
+				response.sendRedirect("jsp/unSubscribe.jsp");
 				return;
 			}else {
 
@@ -79,7 +79,7 @@ public class UnSub extends HttpServlet {
 
 				db.deleteUser(userid,userpass);
 
-				response.sendRedirect("view/testTopPage.jsp");
+				response.sendRedirect("jsp/testTopPage.jsp");
 
 			}
 

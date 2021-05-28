@@ -61,7 +61,7 @@ function next(){
 
 	%>
 
-
+	<div class="image-wrapper2"></div>
 
 	<div class="main">
 
