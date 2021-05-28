@@ -19,9 +19,6 @@ public class DBClass {
 		    // コミット前に空にしておくこと
 
 		    String serverName = "LAPTOP-9ULJU3DP\\SQLEXPRESS";	// サーバ名
-
-
-
 		    String dbName = "GroupC";						// データベース名
 
 
