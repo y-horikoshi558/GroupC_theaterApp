@@ -90,7 +90,7 @@ dots: true, //ドットインジケータの表示
 <img alt="" src="image_1">
 <img alt="" src="<%=image_1%>">
 
-<form action="./selectDate.jsp">
+<form action="./jsp/selectDate.jsp">
 <input type ="hidden" name="title_id" value="タイトル" >
 <input type="submit" value="日付、時間帯選択ページへ" >
 </form>

@@ -123,7 +123,7 @@ else
 
 		<form action="" id="form" method="GET">
 			<input type="hidden" name="title" value=<%= title %>>
-			<input type="hidden" name="id" value=<%= id %>>
+			<input type="hidden" name="title_id" value=<%= id %>>
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= screen %>>
 			<input type="hidden" name="time" value=<%= time %>>

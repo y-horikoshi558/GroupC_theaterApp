@@ -42,13 +42,13 @@ public class selectGroup extends HttpServlet {
 		String date = request.getParameter("date");
 		String screen = request.getParameter("screen");
 		String time = request.getParameter("time");
-		String seat = request.getParameter("seat");
+		String[] seat = request.getParameterValues("seat");
 
 		request.setAttribute("title", title);
-		request.setAttribute("title_id", id);
+		request.setAttribute("id", id);
 		request.setAttribute("date", date);
 		request.setAttribute("screen", screen);
-		request.setAttribute("time", seat);
+		request.setAttribute("time", time);
 		request.setAttribute("seats", seat);
 
 		groupDAO gd = new groupDAO();
