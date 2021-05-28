@@ -4,7 +4,6 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="bean.DateBean"%>
-<%@page import="common.NullCheck"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -93,13 +92,6 @@ List<DateBean> scheduleList = (List<DateBean>)request.getAttribute("list");
 //scheduleList.add(new String[]{"M01", "2021-06-01", "12:30", "A"});
 //scheduleList.add(new String[]{"M01", "2021-06-02", "12:30", "A"});
 
-if (NullCheck.nullCheckBoolean(title) == "" ||
-NullCheck.nullCheckBoolean(id) == "")
-{ %>
-	<META http-equiv="Refresh" content="0;URL=Top.jsp">
-<%
-	return;
-}
 %>
 
 <div align="center">
@@ -139,7 +131,7 @@ NullCheck.nullCheckBoolean(id) == "")
 	stheaters.add(scheduleList.get(0).getScreen());
 	for (int i = 1; i < scheduleList.size(); i++) {
 		for (int j = 0; j < stheaters.size(); j++) {
-			if (stheaters.get(j).equals(scheduleList.get(i).getScreen()))
+			if (stheaters.get(j) == scheduleList.get(i).getScreen())
 				break;
 			if (j != stheaters.size() - 1)
 				continue;
@@ -159,19 +151,16 @@ NullCheck.nullCheckBoolean(id) == "")
 				<% if (!day[k].equals(scheduleList.get(j).getDate().substring(8, 10))) continue; %>
 				<% // スクリーンチェック %>
 				<% String sday = scheduleList.get(j).getScreen(); %>
-				<% if (!stheaters.get(i).equals(sday)) continue; %>
-				<% // 月日のみ取り出す %>
-				<% String[] lTime = scheduleList.get(j).getTime().split(":"); %>
-
+				<% if (stheaters.get(i) != sday) continue; %>
 
 				<% if (!once) { %>
 					<% once = true; %>
 					<th><%= stheaters.get(i) %> Screen</th>
 				<% } %>
 
-				<% String tdId = sday + scheduleList.get(j).getDate() + lTime[0] + ":" + lTime[1]; %>
+				<% String tdId = sday + scheduleList.get(j).getDate() + scheduleList.get(j).getTime(); %>
 				<td class="selectTime" id=<%= tdId %> name="selectTime"><%= scheduleList.get(j).getDate() %><br>
-				<%= lTime[0] + ":" + lTime[1] %></td>
+				<%= scheduleList.get(j).getTime() %></td>
 
 			<% } %>
 			</tr>
