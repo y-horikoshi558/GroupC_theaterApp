@@ -89,6 +89,11 @@ if (Objects.isNull(ticketBean)) {
 </head>
 
 <body>
+
+	<%
+
+	%>
+
 	<div id = "side">
 	<%
 	//if(ticketBean.getLogin()){
@@ -116,7 +121,10 @@ if (Objects.isNull(ticketBean)) {
 			  取れない場合はマイページを表示しないとかの処理が必要になるかもです
 	 -->
 
-	<% }%>
+	<%}%>
+
+
+
 	</div>
 	</div>
 	</div>
