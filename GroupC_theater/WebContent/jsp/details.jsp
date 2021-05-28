@@ -26,6 +26,7 @@
 
 
 
+
 <%
 	//topページのパラメータの値を受け取りました
 	String id = request.getParameter("titleId");
@@ -44,17 +45,8 @@
 	for (int i = 0; i < image.length; i++)
 		image[i] = "";
 
-	*/
 
-	  String titleId  = md.getTitleId();
-	  String titleName = md.getTitleName();
-	  String poster   = md.getPoster();
-	  String Story    = md.getStory();
-	  String image_1 = md.getImage1();
-	  String image_2 = md.getImage2();
-	  String image_3 = md.getImage5();
-	  String image_4 ="";
-	  String image_5 ="";
+
 
 	if (movies.get(0).getImage1() != null)
 	{
@@ -77,207 +69,19 @@
 		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
 	}
 
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
-
-	if (movies.get(0).getImage1() != null)
-	{
-		image[0] = "\"" + movies.get(0).getImage1().substring(2, movies.get(0).getImage1().length()) + "\"";
-	}
-	if (movies.get(0).getImage2() != null)
-	{
-		image[1] = "\"" + movies.get(0).getImage2().substring(2, movies.get(0).getImage2().length()) + "\"";
-	}
-	if (movies.get(0).getImage3() != null)
-	{
-		image[2] = "\"" + movies.get(0).getImage3().substring(2, movies.get(0).getImage3().length()) + "\"";
-	}
-	if (movies.get(0).getImage4() != null)
-	{
-		image[3] = "\"" + movies.get(0).getImage4().substring(2, movies.get(0).getImage4().length()) + "\"";
-	}
-	if (movies.get(0).getImage5() != null)
-	{
-		image[4] = "\"" + movies.get(0).getImage5().substring(2, movies.get(0).getImage5().length()) + "\"";
-	}
 
 
 %>
 
 <div align="center">
 
-<h1><%= titleName %></h1>
 
-<div id="slick01">
-<div><a href="#content01"><img src=<%=image_1 %> width="500" height="400" alt="アイキャッチ画像01"></a></div>
-<div><a href="#content02"><img src= <%=image_2 %> width="750" height="400" alt="アイキャッチ画像02"></a></div>
-<div><a href="#content03"><img src= ""width="750" height="400" alt="アイキャッチ画像03"></a></div>
-<div><a href="#content04"><img src="" width="750" height="400" alt="アイキャッチ画像04"></a></div>
-<div><a href="#content04"><img src= ""width="750" height="400" alt="アイキャッチ画像05"></a></div>
 <% for (int i = 0; i < image.length; i++) { %>
 <%	if (image[i].equals("")) continue; %>
 	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
 <% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-<% for (int i = 0; i < image.length; i++) { %>
-<%	if (image[i].equals("")) continue; %>
-	<div><a href="#content0<%= i+1 %>"><img src= <%= image[i] %> width="500" height="400" alt="アイキャッチ画像0<%= i+1 %>"></a></div>
-<% } %>
-</div>
+
+
 
 <script type="text/javascript">
 $(function(){
@@ -297,6 +101,8 @@ dots: true, //ドットインジケータの表示
 </form>
 
 </div>
+
+
 </body>
 
 </html>
