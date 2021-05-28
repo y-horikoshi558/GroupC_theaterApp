@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,49 +24,61 @@
 		color:red;
 	}
 
-	table{
-
-	width:500px;
-	height:60px;
-		color:red;
-		border: solid 3px purple;
-		text-align:center;
-	font-size:40px:
-
+	.ticket{
+		font-size:30px;
+		color:#FFABCE;
 	}
 </style>
 
+<!-- BootstrapのCSS読み込み -->
+	    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <!-- jQuery読み込み -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <!-- BootstrapのJS読み込み -->
+	    <script src="../js/bootstrap.min.js"></script>
+
 
 </head>
-<body>
+<body style=background-color:#c4e9e6;>
 <center>
 
 <header>
 ヘッダー
 </header>
 <%
-String slip_id = request.getParameter("slip_id");
+List<String> slip_id_list = (List<String>)session.getAttribute("slip_id_list");
 %>
 
 <br><br>
-<p>ご購入ありがとうございました。</p>
+
+<h1>チケット購入完了ページ</h1>
 
 <br><br>
+
+<p>ご購入ありがとうございました。</p>
+
+
+<br><br>
+
 
 <div class="hikae" >※チケットIDを必ずお控えください。</div>
 
-<br><br>
-
-
-
-<div class="tikect">チケットID : <%=slip_id%></div>
-
-
 
 <br><br>
-<table border="0" name="top" width="300px">
-	<tr>
-		<td>
+
+<div class="ticket">チケットID : <br>
+
+<%
+	for(String id : slip_id_list){
+%>
+		・<%=id %><br>
+<%
+	}
+%>
+</div>
+
+<br><br>
+
 
 <form action = "../Top">
 
@@ -73,9 +86,7 @@ String slip_id = request.getParameter("slip_id");
 
 
 </form>
-</td>
-	</tr>
-</table>
+
 </center>
 </body>
 </html>

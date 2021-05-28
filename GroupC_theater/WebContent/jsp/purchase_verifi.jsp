@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import = "java.util.List" %>
+<%@page import = "bean.userBean"%>
+<%@page import="bean.GroupBean"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -125,10 +129,13 @@ String credit3 = request.getParameter("credit3");
 
 String[] seats = new String[6];
 seats = request.getParameterValues("seat");
+
 String[] groupId = new String[6];
 groupId = request.getParameterValues("groupId");
+
 String[] group = new String[6];
 group = request.getParameterValues("group");
+
 String[] price = new String[6];
 price = request.getParameterValues("price");
 %>
@@ -192,10 +199,15 @@ price = request.getParameterValues("price");
 <input type="hidden" name="time" value=<%= time %>>
 <% for (int i = 0; i < seats.length; i++) { %>
 <input type="hidden" name="seat"value=<%= seats[i] %>>
-<input type="hidden" name="group" value=<%= groupId[i] %>>
 <input type="hidden" name="group" value=<%= group[i] %>>
 <input type="hidden" name="price" value=<%= price[i] %>>
 <% } %>
+
+<% for (int i = 0; i < groupId.length; i++) { %>
+				<input type="hidden" name="groupId" value=<%= groupId[i] %>>
+			<%} %>
+
+
 <input type="hidden" name="sumPrice" value=<%= sumPrice %>>
 <input type="hidden" id="credit" name = "mileage" value =<%= userMile %>>
 

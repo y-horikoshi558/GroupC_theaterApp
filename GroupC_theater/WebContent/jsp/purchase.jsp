@@ -1,7 +1,11 @@
+<%@page import="java.util.Objects"%>
+<%@page import="bean.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.List" %>
 <%@page import = "bean.userBean"%>
+<%@page import="bean.GroupBean"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,13 +130,19 @@
 <header>
 へっだー
 </header>
-
+<%
+List<userBean> userInfo = (List<userBean>)session.getAttribute("userInfo");//マイレージ取得
+int mileage = 0;
+if(Objects.nonNull(userInfo)){
+	mileage = userInfo.get(0).getMileage();
+}
+%>
 <script type="text/javascript">
 
 
 //マイレージが押されているかの判定
 function myfunc(){
-var mileage = document.getElementById("mileage");
+var mileage = <%=mileage%>;  //マイレージ
 var sum = <%=request.getParameter("motone")%>;				//表示用金額
 var myragesum = document.getElementById("myragesum");				//表示用マイレージ適用金額
 var sumsum = document.getElementById("sumPrice");		//値受け渡し用合計金額
@@ -182,7 +192,7 @@ String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("motone"); //動かないもともとの金額
 String sumPrice2 = request.getParameter("sumPrice"); //マイレージの変動あり
 String sUser_id = (String)session.getAttribute("user_id");
-String mileage = request.getParameter("mileage");//マイレージ取得
+
 List<userBean> sUserId =(List<userBean>)session.getAttribute("userInfo");
 int userMile = 0;
 
@@ -194,8 +204,10 @@ String maneger =  request.getParameter("maneger");
 
 String[] seats = new String[6];
 seats = request.getParameterValues("seat");
+
 String[] groupId = new String[6];
-groupId = request.getParameterValues("groupId");
+groupId = request.getParameterValues("hidSelect");
+
 String[] group = new String[6];
 group = request.getParameterValues("group");
 String[] price = new String[6];
@@ -249,11 +261,9 @@ if (flg == null) flg = "";
 	<%} %>
 </table>
 
-
-
 <div name = "manegercheck" id ="aa">
 	<td id = "mileage">
-	<input type="checkbox" name="maneger"  id="maneger" onchange="myfunc()"   <%= flg.equals("on") ? "checked" : "" %>>マイレージの使用
+	<input type="checkbox" name="maneger"  id="maneger" onchange="myfunc()"   <%= flg.equals("on") ? "checked" : "" %>>マイレージの使用（<%=mileage%>円）
 	</td>
 </div>
 
@@ -293,12 +303,17 @@ if (flg == null) flg = "";
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= theater %>>
 			<input type="hidden" name="time" value=<%= time %>>
+
 			<% for (int i = 0; i < seats.length; i++) { %>
 				<input type="hidden" name=<%="seat"%> value=<%= seats[i] %>>
-				<input type="hidden" name="group" value=<%= groupId[i] %>>
 				<input type="hidden" name="group" value=<%= group[i] %>>
+
 				<input type="hidden" name="price" value=<%= price[i] %>>
 			<% } %>
+			<% for (int i = 0; i < groupId.length; i++) { %>
+				<input type="hidden" name="groupId" value=<%= groupId[i] %>>
+			<%} %>
+			<input type="hidden" id="credit" name = "mileage" value =<%= mileage %>>
 			<input type="hidden" id="credit" name = "mileage" value =<%= userMile %>>
 			<input type="hidden" id="sumPrice" name = "sumPrice" value=<%= sumPrice %>>
 			<input type="hidden" name = "motone" value=<%=request.getParameter("motone")%>>
@@ -313,8 +328,8 @@ if (flg == null) flg = "";
 			<input type="hidden" name="theater" value=<%= theater %>>
 			<input type="hidden" name="time" value=<%= time %>>
 			<% for (int i = 0; i < seats.length; i++) { %>
-			<input type="hidden" name="seat"value=<%= seats[i] %>>
-			<input type="hidden" id="sumPrice" value=<%= sumPrice %>>
+				<input type="hidden" name="seat"value=<%= seats[i] %>>
+				<input type="hidden" id="sumPrice" value=<%= sumPrice %>>
 				<input type="hidden" name="group">
 				<input type="hidden" name="price">
 			<% } %>

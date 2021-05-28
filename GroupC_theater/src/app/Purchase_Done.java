@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -233,6 +234,7 @@ public class Purchase_Done extends HttpServlet {
 			// DAO
 			Purchase pur = new Purchase();
 
+			List<String> idList = new ArrayList<String>();
 			for(int i = 0;i<age.length;i++) {
 
 				if (seat[i] == "") {
@@ -241,11 +243,14 @@ public class Purchase_Done extends HttpServlet {
 					// 入っている場合、書き込み実行
 					//subStringで月日を取る
 					pur.istTicket(res2+res3+resalt3+resalt4+seat[i] ,userId,titleId,date,time,seat[i],age[i]);
+					idList.add(res2+res3+resalt3+resalt4+seat[i]);
 				}
 			}
 
+			session.setAttribute("slip_id_list", idList);
 
-    			response.sendRedirect("jsp/purchase_done.jsp");
+
+			response.sendRedirect("jsp/purchase_done.jsp");
     	}
 
 }

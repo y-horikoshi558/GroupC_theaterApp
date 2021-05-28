@@ -60,6 +60,15 @@ $(function() {
 
 });
 
+
+function setHid(obj){
+	var id = $(obj).prop("id");
+
+	var k = $('#'+id + ' option:selected').attr('class');
+
+	$('#hidSelect'+id.replace("select","")).val(k);
+
+}
 </script>
 
 <body>
@@ -99,18 +108,22 @@ else
 
 		<p>チケットの種類をお選びください。</p>
 
+		<form action="" id="form" method="GET">
+
 		<% for (int i = 0; i < seats.length; i++) { %>
 			<% if (seats[i] == "")	continue; %>
 
 		<p>
 		<%= seats[i] %>
 
-		<select class="selectGroup" name="select" id="select<%= i %>">
+
+		<select class="selectGroup" name="select" id="select<%= i %>" onChange="setHid(this)">
 			<option value="0" selected>選択してください。</option>
 			<% for (int j = 0; j < groupList.size(); j++) { %>
-			<option value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
+			<option  class="<%= groupList.get(j).getId() %>" value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
 			<% } %>
 		</select>
+		<input type="hidden" name="hidSelect" id="hidSelect<%= i %>" >
 
 		</p>
 
@@ -121,12 +134,13 @@ else
 			合計　　<a id="sumDisp">0</a>円
 		</p>
 
-		<form action="" id="form" method="GET">
+
 			<input type="hidden" name="title" value=<%= title %>>
 			<input type="hidden" name="title_id" value=<%= id %>>
 			<input type="hidden" name="date" value=<%= date %>>
 			<input type="hidden" name="theater" value=<%= screen %>>
 			<input type="hidden" name="time" value=<%= time %>>
+
 			<% for (int i = 0; i < seats.length; i++) { %>
 				<input type="hidden" name="seat"value=<%= seats[i] %>>
 				<input type="hidden" name="group">
