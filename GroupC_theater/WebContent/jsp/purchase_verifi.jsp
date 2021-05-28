@@ -119,12 +119,14 @@ String sumPrice = request.getParameter("sumPrice");
 String flg = request.getParameter("maneger");
 String userMile = request.getParameter("mileage");
 String sUser_id = (String)session.getAttribute("user_id");
-String sMileage = (String)session.getAttribute("mileage");
+//String sMileage = (String)session.getAttribute("mileage");
 
 String credit3 = request.getParameter("credit3");
 
 String[] seats = new String[6];
 seats = request.getParameterValues("seat");
+String[] groupId = new String[6];
+groupId = request.getParameterValues("groupId");
 String[] group = new String[6];
 group = request.getParameterValues("group");
 String[] price = new String[6];
@@ -190,6 +192,7 @@ price = request.getParameterValues("price");
 <input type="hidden" name="time" value=<%= time %>>
 <% for (int i = 0; i < seats.length; i++) { %>
 <input type="hidden" name="seat"value=<%= seats[i] %>>
+<input type="hidden" name="group" value=<%= groupId[i] %>>
 <input type="hidden" name="group" value=<%= group[i] %>>
 <input type="hidden" name="price" value=<%= price[i] %>>
 <% } %>

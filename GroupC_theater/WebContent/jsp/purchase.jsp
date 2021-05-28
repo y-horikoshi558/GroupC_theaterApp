@@ -181,7 +181,7 @@ String time  = request.getParameter("time");
 String theater = request.getParameter("theater");
 String sumPrice = request.getParameter("motone"); //動かないもともとの金額
 String sumPrice2 = request.getParameter("sumPrice"); //マイレージの変動あり
-List<userBean> sUserId =(List<userBean>)session.getAttribute("sesUserBeanList");
+List<userBean> sUserId =(List<userBean>)session.getAttribute("userInfo");
 int userMile = 0;
 
 for(userBean uB :sUserId ) {
@@ -293,7 +293,7 @@ if (flg == null) flg = "";
 			<input type="hidden" name="time" value=<%= time %>>
 			<% for (int i = 0; i < seats.length; i++) { %>
 				<input type="hidden" name=<%="seat"%> value=<%= seats[i] %>>
-
+				<input type="hidden" name="group" value=<%= groupId[i] %>>
 				<input type="hidden" name="group" value=<%= group[i] %>>
 				<input type="hidden" name="price" value=<%= price[i] %>>
 			<% } %>
