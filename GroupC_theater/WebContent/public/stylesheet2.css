@@ -36,6 +36,13 @@ header h2{
 }
 
 
+.image-wrapper{
+	height:40px;
+	width:100%;
+	background-color: #f8dce0;
+
+}
+
 .main{
 	background-color: #434343ff;
 }

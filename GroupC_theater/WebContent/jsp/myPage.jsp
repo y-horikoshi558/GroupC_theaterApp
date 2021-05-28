@@ -38,7 +38,7 @@
 	}
 
 %>
-
+	<div class="image-wrapper"></div>
 
 	<div class="main">
 		<div class="myPageWrapper">

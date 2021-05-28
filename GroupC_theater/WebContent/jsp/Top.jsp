@@ -87,7 +87,8 @@ text-align:center;
 	<ul class="slick01">
 
        <% for(MovieBean movie:movies) { %>
-    	   <a href="../DetailsServlet?titleId=<%= movie.getMovieId() %>"><img src=<%= movie.getPosterURL() %> title="名探偵コナソ　小六郎の死"></a>
+
+			<a href="../DetailsServlet?titleId=<%= movie.getMovieId() %>"><img src=<%= movie.getPosterURL() %> title="名探偵コナソ　小六郎の死"></a>
 
  			<!-- out.println("<li><a href = '/Test2?movie_id = " + movie.getMovieId() + "><img alt = '画像' src = '" + movie.getPosterURL() + "'></a></li>"); -->
  		<% }%>
