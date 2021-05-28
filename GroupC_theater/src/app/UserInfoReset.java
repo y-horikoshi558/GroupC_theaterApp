@@ -68,7 +68,7 @@ public class UserInfoReset extends HttpServlet {
 
 		db.updateUser(req_email, req_pass, user_id, user_pass);
 
-		response.sendRedirect("jsp/testTopPage.jsp");
+		response.sendRedirect("jsp/Top.jsp");
 
 	}
 

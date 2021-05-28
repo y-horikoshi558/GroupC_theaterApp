@@ -5,6 +5,7 @@
 <%@page import="bean.userBean"%>
 <%@page import="java.util.Objects"%>
 <%@page import="java.util.List"%>
+<%@page import="bean.MovieBean"%>
 
 <!DOCTYPE html>
 <html>
@@ -27,6 +28,13 @@ function next(){
 </script>
 </head>
 <body>
+
+	<%
+	request.getRequestDispatcher("Header.jsp").include(request, response);
+	request.getRequestDispatcher("/Top").include(request, response);
+	List<MovieBean> movies = (List<MovieBean>)session.getAttribute("sesMovies");
+	 %>
+
 
 	<%
 
@@ -53,9 +61,7 @@ function next(){
 
 	%>
 
-	<header>
-		<h2 class="PageWrapper">headerWrapper</h2>
-	</header>
+
 
 	<div class="main">
 
@@ -88,40 +94,42 @@ function next(){
 
 			</div>
 
+		<div class="sub-title-wrapper" id ="change-css">
+			<p class="sub-title" id="text">編集</p>
+		</div>
+
 
 
 		<div class="container">
+
 			<div class="userinfo-contents">
 
-
+			<form action="myPage.jsp" method="post" id ="sback" name="frm">
 
 				<div class="reset-email">
-					<p>メールアドレス</p>
-
+					<p>新規メールアドレス</p>
+					<input class="inputDeco1" type="text" name="setEmail"  value="<%=user_email%>">
 				</div>
 				<div class="reset-pass">
-					<p>パスワード</p>
-
+					<p>新規パスワード</p>
+					<input class="inputDeco1" type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
 				</div>
 
-			<form action="myPage.jsp" method="post" id ="sback" name="frm">
 
 			<div class="bottom-container">
 				<div class="buttom-contents">
 
-					<div  class="form-check">
+					<div  class="form-back">
 
-						<input type="text" name="setPass" form="inputreset" value="<%=user_pass%>">
-
-						<input type="text" name="setEmail"  value="<%=user_email%>">
-
-						<input type="button" value="確認" onClick="next()">
+					<input type="submit" value="戻る" form="sback">
 
 					</div>
 
-					<div  class="form-back">
 
-						<input type="submit" value="戻る" form="sback">
+					<div  class="form-check">
+
+					<input type="button" value="確認" onClick="next()">
+
 
 					</div>
 
@@ -130,7 +138,7 @@ function next(){
 			</div>
 
 			</form>
-			</div>
+		</div>
 
 
 		</div>
