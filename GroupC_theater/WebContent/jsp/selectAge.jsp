@@ -122,11 +122,15 @@ else
 		<select class="selectGroup" name="select" id="select<%= i %>" onChange="setHid(this)">
 			<option value="0" selected>選択してください。</option>
 			<% for (int j = 0; j < groupList.size(); j++) { %>
-<<<<<<< HEAD
+
+<%--
 			<option  class="<%= groupList.get(j).getId() %>" value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
-=======
 			<option name=<%= groupList.get(i).getId() %> value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
->>>>>>> refs/heads/Detail
+ --%>
+				<option  class="<%= groupList.get(j).getId() %>" value=<%= groupList.get(j).getPrice() %>><%= groupList.get(j).getAge() %></option>
+
+
+
 			<% } %>
 		</select>
 		<input type="hidden" name="hidSelect" id="hidSelect<%= i %>" >

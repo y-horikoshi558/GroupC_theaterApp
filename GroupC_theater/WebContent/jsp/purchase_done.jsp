@@ -80,7 +80,7 @@ List<String> slip_id_list = (List<String>)session.getAttribute("slip_id_list");
 <br><br>
 
 
-<form action = "../Top">
+<form action = "./Top.jsp">
 
 <input type = "submit" class="purchase btn btn-outline-primary btn-lg" value = "Topへ">
 

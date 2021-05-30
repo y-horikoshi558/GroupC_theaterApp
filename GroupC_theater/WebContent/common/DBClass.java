@@ -21,7 +21,7 @@ public class DBClass {
 
 		 // フェッチ後はそれぞれの名前に変更
 		    // コミット前に空にしておくこと
-		    String serverName = "POCHI\\SQLEXPRESS";	// サーバ名
+		    String serverName = "LAPTOP-9ULJU3DP\\SQLEXPRESS";	// サーバ名
 		    String dbName = "Kensyu";						// データベース名
 
 		    String userName = "sa";							// ユーザ名

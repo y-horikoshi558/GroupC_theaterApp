@@ -128,7 +128,9 @@
 <br><br>
 
 <header>
-へっだー
+<%
+request.getRequestDispatcher("/Top").include(request, response);
+%>
 </header>
 <%
 List<userBean> userInfo = (List<userBean>)session.getAttribute("userInfo");//マイレージ取得
@@ -169,7 +171,6 @@ var sumsum = document.getElementById("sumPrice");		//値受け渡し用合計金
 	 }
 }
 
-
 const input = document.querySelector('input[type="number"]')
 input.addEventListener('input', function(e) {
   const value = e.target.value
@@ -195,6 +196,7 @@ String sUser_id = (String)session.getAttribute("user_id");
 
 List<userBean> sUserId =(List<userBean>)session.getAttribute("userInfo");
 int userMile = 0;
+int sMileage = 0;
 
 for(userBean uB :sUserId ) {
 	userMile = uB.getMileage();
@@ -313,7 +315,7 @@ if (flg == null) flg = "";
 			<% for (int i = 0; i < groupId.length; i++) { %>
 				<input type="hidden" name="groupId" value=<%= groupId[i] %>>
 			<%} %>
-			<input type="hidden" id="credit" name = "mileage" value =<%= mileage %>>
+			<input type="hidden" id="credit" name = sMileage" value =<%= sMileage %>>
 			<input type="hidden" id="credit" name = "mileage" value =<%= userMile %>>
 			<input type="hidden" id="sumPrice" name = "sumPrice" value=<%= sumPrice %>>
 			<input type="hidden" name = "motone" value=<%=request.getParameter("motone")%>>
